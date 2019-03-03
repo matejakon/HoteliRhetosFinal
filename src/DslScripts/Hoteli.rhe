@@ -1,0 +1,110 @@
+Module Hoteli {
+    Entity Hotel
+    {
+        ShortString Code { AutoCode; }
+        ShortString Name;
+        LongString Address;
+        Reference Location;
+    }
+
+    Entity Location 
+    {
+        Extends Hoteli.Hotel;
+        ShortString Code { AutoCode; }
+        ShortString Country;
+        ShortString County;
+        ShortString City;
+        ShortString Area;
+    }
+
+    Entity RoomReservation 
+    { 
+        ShortString Code { AutoCode; }
+        Reference ReservationGuest Hoteli.Reservation;
+        Reference ReservatonRoom Hoteli.Rooms;
+    }
+
+    Entity Reservation
+    {
+        ShortString Code { AutoCode; }
+        Reference Guest Hoteli.Person;
+        Date DateFrom;
+        Date DateTo;
+        Integer NumberOfPeople;
+    }
+
+    Entity Rooms 
+    {
+        ShortString Code { AutoCode; } 
+        Integer NumberOfPeople;
+        Reference RoomOfHotel Hoteli.Hotel;
+        ShortString TypeOfRoom;
+    }
+
+    Entity Person
+    {
+        ShortString Code { AutoCode; } 
+        LongString Identifier;
+        LongString Name;
+        LongString Surname;
+        LongString Address;
+        bool isGuest;
+        bool isEmployee;
+        bool isOwner;
+        Integer Discount;
+    }
+
+    Entity Reservation 
+    {
+        ShortString Code { AutoCode; } 
+
+
+    }
+
+    Entity SaloonPerson 
+    {
+         ShortString Code { AutoCode; }
+         Reference OwnerName Hoteli.Person;
+         Reference SalonId Hoteli.Saloon;
+    }
+
+     Entity SaloonHotel 
+    {
+         ShortString Code { AutoCode; }
+         Reference OwnerName Hoteli.Hotel;
+         Reference SalonId Hoteli.Saloon;
+    }
+
+    Entity Saloon 
+    {
+         ShortString Code { AutoCode; }
+         LongString Name;
+         Reference HotelSaloon Hoteli.Hotel;     
+    }
+
+     Entity ProductPerson 
+    {
+         ShortString Code { AutoCode; }
+         Reference OwnerName Hoteli.Person;
+         Reference ProductId Hoteli.Product;
+    }
+
+     Entity ProductHotel
+    {
+         ShortString Code { AutoCode; }
+         Reference OwnerName Hoteli.Hotel;
+         Reference ProductId Hoteli.Product;
+    }
+
+    Entity Product 
+    {
+        ShortString Code { AutoCode; }
+         LongString Title;
+         Reference HotelSaloon Hoteli.Hotel;
+    }
+
+
+
+
+
+}

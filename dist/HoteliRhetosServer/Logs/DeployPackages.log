@@ -1,0 +1,348 @@
+2019-02-27 14:26:00.5218|TRACE|DeployPackages|Moving old generated files to cache.
+2019-02-27 14:26:00.6200|TRACE|DeployPackages|Getting packages.
+2019-02-27 14:26:00.6442|ERROR|DeploymentConfiguration|No packages defined in 'RhetosPackages.config'. Edit the new file to set which Rhetos packages will be deployed. Note that removing a Rhetos package from the file will uninstall the package.
+2019-02-27 14:26:00.6726|TRACE|Packages|Rhetos 2.11.0 (requested from Rhetos framework) in C:\Users\Mateja\Documents\Hoteli\dist\HoteliRhetosServer.
+2019-02-27 14:26:01.7864|TRACE|DeployPackages|Loading plugins.
+2019-02-27 14:26:02.1928|TRACE|DeployPackages|SQL connection: DataSource=localhost, InitialCatalog=Rhetos
+2019-02-27 14:26:02.2848|TRACE|DeployPackages|Preparing Rhetos database.
+2019-02-27 14:26:02.8646|TRACE|DeployPackages|Parsing DSL scripts.
+2019-02-27 14:26:02.9905|TRACE|DeployPackages|Application model has 1 statements.
+2019-02-27 14:26:02.9905|TRACE|DeployPackages|Compiling DOM assembly.
+2019-02-27 14:26:03.0147|ERROR|DeployPackages|WARNING: Empty assembly is generated.
+2019-02-27 14:26:03.0307|TRACE|DeployPackages|Executing EntityFrameworkMappingGenerator.
+2019-02-27 14:26:03.0452|TRACE|DeployPackages|Cleaning old migration data.
+2019-02-27 14:26:03.1159|TRACE|DeployPackages|Deleted 0 columns in data migration schemas, 0 remaining.
+2019-02-27 14:26:03.1159|TRACE|DeployPackages|Executing data migration scripts.
+2019-02-27 14:26:03.1590|TRACE|DeployPackages|Executed 0 of 0 scripts.
+2019-02-27 14:26:03.1700|TRACE|DeployPackages|Upgrading database.
+2019-02-27 14:26:03.2792|TRACE|DeployPackages|DatabaseGenerator removing 0 concept applications.
+2019-02-27 14:26:03.2898|TRACE|DeployPackages|DatabaseGenerator creating 0 concept applications.
+2019-02-27 14:26:03.3011|TRACE|DeployPackages|Deleting redundant migration data.
+2019-02-27 14:26:03.3231|TRACE|DeployPackages|Deleted 0 columns in data migration schemas, 0 remaining.
+2019-02-27 14:26:03.3341|TRACE|DeployPackages|Uploading DSL scripts.
+2019-02-27 14:26:03.3944|TRACE|DeployPackages|Uploaded 0 DSL scripts to database.
+2019-02-27 14:26:03.4072|TRACE|DeployPackages|Loading generated plugins.
+2019-02-27 14:26:03.4303|TRACE|DeployPackages|No server initialization plugins.
+2019-02-27 14:26:03.4492|TRACE|DeployPackages|Updated Web.config modification date to restart server.
+2019-02-27 14:26:03.4626|TRACE|DeployPackages|Done.
+2019-03-02 14:52:14.0902|TRACE|DeployPackages|Moving old generated files to cache.
+2019-03-02 14:52:14.7285|TRACE|DeployPackages|Getting packages.
+2019-03-02 14:52:14.8649|TRACE|PackageDownloader|Not looking for Rhetos.CommonConcepts (version not specified) in packages cache because the request does not specify an exact version.
+2019-03-02 14:52:18.1645|TRACE|PackageDownloader|Downloading NuGet package Rhetos.CommonConcepts 2.11.0 from https://www.nuget.org/api/v2/.
+2019-03-02 14:52:21.1102|TRACE|NuGet|Installing 'Rhetos.CommonConcepts 2.11.0'.
+2019-03-02 14:52:21.6655|TRACE|NuGet|Successfully installed 'Rhetos.CommonConcepts 2.11.0'.
+2019-03-02 14:52:21.7152|TRACE|PackageDownloader|Not looking for Rhetos.RestGenerator (version not specified) in packages cache because the request does not specify an exact version.
+2019-03-02 14:52:22.3622|TRACE|PackageDownloader|Downloading NuGet package Rhetos.RestGenerator 2.5.0 from https://www.nuget.org/api/v2/.
+2019-03-02 14:52:23.2838|TRACE|NuGet|Installing 'Rhetos.RestGenerator 2.5.0'.
+2019-03-02 14:52:23.3426|TRACE|NuGet|Successfully installed 'Rhetos.RestGenerator 2.5.0'.
+2019-03-02 14:52:23.3538|TRACE|PackageDownloader|Reading package Hoteli from unpacked source folder without metadata file.
+2019-03-02 14:52:23.3645|TRACE|DeployPackages|Reading Hoteli from source without metadata.
+2019-03-02 14:52:23.4982|TRACE|Packages|Hoteli 0.0 (requested from configuration file RhetosPackages.config) in C:\Users\Mateja\Documents\Hoteli\src.
+2019-03-02 14:52:23.4982|TRACE|Packages|Rhetos 2.11.0 (requested from Rhetos framework) in C:\Users\Mateja\Documents\Hoteli\dist\HoteliRhetosServer.
+2019-03-02 14:52:23.5164|TRACE|Packages|Rhetos.CommonConcepts 2.11.0 (requested from configuration file RhetosPackages.config) in C:\Users\Mateja\Documents\Hoteli\dist\HoteliRhetosServer\PackagesCache\Rhetos.CommonConcepts.2.11.0.
+2019-03-02 14:52:23.5236|TRACE|Packages|Rhetos.RestGenerator 2.5.0 (requested from configuration file RhetosPackages.config) in C:\Users\Mateja\Documents\Hoteli\dist\HoteliRhetosServer\PackagesCache\Rhetos.RestGenerator.2.5.0.
+2019-03-02 14:52:25.0888|TRACE|DeployPackages|Loading plugins.
+2019-03-02 14:52:36.0885|INFO|Performance|00:00:10.9894222 DeployPackages.Program: Modules and plugins registered.
+2019-03-02 14:52:36.4132|TRACE|DeployPackages|SQL connection: DataSource=localhost, InitialCatalog=Rhetos
+2019-03-02 14:52:36.4852|TRACE|DeployPackages|Preparing Rhetos database.
+2019-03-02 14:52:36.6386|TRACE|DeployPackages|Parsing DSL scripts.
+2019-03-02 14:52:36.9945|ERROR|DeployPackages|Rhetos.Dsl.DslSyntaxException: Unique Hoteli.Person.Identifier: Referenced concept is not defined in DSL scripts: 'PropertyInfo Hoteli.Person.Identifier'.
+   at Rhetos.Dsl.DslContainer.ReportErrorForUnresolvedConcepts() in C:\My Projects\Rhetos\Source\Rhetos.Dsl\DslContainer.cs:line 338
+   at Rhetos.Dsl.DslModel.Initialize() in C:\My Projects\Rhetos\Source\Rhetos.Dsl\DslModel.cs:line 117
+   at Rhetos.Dsl.DslModel.get_Concepts() in C:\My Projects\Rhetos\Source\Rhetos.Dsl\DslModel.cs:line 75
+   at Rhetos.Deployment.ApplicationGenerator.ExecuteGenerators(Boolean deployDatabaseOnly) in C:\My Projects\Rhetos\Source\Rhetos.Deployment\ApplicationGenerator.cs:line 79
+   at DeployPackages.Program.GenerateApplication(ILogger logger, DeployArguments arguments) in C:\My Projects\Rhetos\Source\DeployPackages\Program.cs:line 184
+   at DeployPackages.Program.Main(String[] args) in C:\My Projects\Rhetos\Source\DeployPackages\Program.cs:line 70
+Info: 
+2019-03-02 14:58:42.8336|TRACE|DeployPackages|Moving old generated files to cache.
+2019-03-02 14:58:42.9257|TRACE|DeployPackages|Getting packages.
+2019-03-02 14:58:42.9866|TRACE|PackageDownloader|Not looking for Rhetos.CommonConcepts (version not specified) in packages cache because the request does not specify an exact version.
+2019-03-02 14:58:45.5245|TRACE|PackageDownloader|Downloading NuGet package Rhetos.CommonConcepts 2.11.0 from https://www.nuget.org/api/v2/.
+2019-03-02 14:58:46.3967|TRACE|NuGet|'Rhetos.CommonConcepts 2.11.0' already installed.
+2019-03-02 14:58:46.4534|TRACE|PackageDownloader|Not looking for Rhetos.RestGenerator (version not specified) in packages cache because the request does not specify an exact version.
+2019-03-02 14:58:47.0735|TRACE|PackageDownloader|Downloading NuGet package Rhetos.RestGenerator 2.5.0 from https://www.nuget.org/api/v2/.
+2019-03-02 14:58:47.1450|TRACE|NuGet|'Rhetos.RestGenerator 2.5.0' already installed.
+2019-03-02 14:58:47.1450|TRACE|PackageDownloader|Reading package Hoteli from unpacked source folder without metadata file.
+2019-03-02 14:58:47.1627|TRACE|DeployPackages|Reading Hoteli from source without metadata.
+2019-03-02 14:58:47.2577|TRACE|Packages|Hoteli 0.0 (requested from configuration file RhetosPackages.config) in C:\Users\Mateja\Documents\Hoteli\src.
+2019-03-02 14:58:47.2577|TRACE|Packages|Rhetos 2.11.0 (requested from Rhetos framework) in C:\Users\Mateja\Documents\Hoteli\dist\HoteliRhetosServer.
+2019-03-02 14:58:47.2765|TRACE|Packages|Rhetos.CommonConcepts 2.11.0 (requested from configuration file RhetosPackages.config) in C:\Users\Mateja\Documents\Hoteli\dist\HoteliRhetosServer\PackagesCache\Rhetos.CommonConcepts.2.11.0.
+2019-03-02 14:58:47.2875|TRACE|Packages|Rhetos.RestGenerator 2.5.0 (requested from configuration file RhetosPackages.config) in C:\Users\Mateja\Documents\Hoteli\dist\HoteliRhetosServer\PackagesCache\Rhetos.RestGenerator.2.5.0.
+2019-03-02 14:58:47.3349|TRACE|DeployPackages|Loading plugins.
+2019-03-02 14:58:48.3315|TRACE|DeployPackages|SQL connection: DataSource=localhost, InitialCatalog=Rhetos
+2019-03-02 14:58:48.4043|TRACE|DeployPackages|Preparing Rhetos database.
+2019-03-02 14:58:48.5943|TRACE|DeployPackages|Parsing DSL scripts.
+2019-03-02 14:58:49.0219|TRACE|DeployPackages|Application model has 728 statements.
+2019-03-02 14:58:49.0219|TRACE|DeployPackages|Compiling DOM assembly.
+2019-03-02 14:58:49.3971|TRACE|AssemblyGenerator|Compiling assembly: ServerDom.Model.dll.
+2019-03-02 14:58:49.8434|TRACE|AssemblyGenerator|Compiling assembly: ServerDom.Orm.dll.
+2019-03-02 14:58:50.3765|TRACE|AssemblyGenerator|Compiling assembly: ServerDom.Repositories.dll.
+2019-03-02 14:58:50.9437|TRACE|DeployPackages|Generated 186 types.
+2019-03-02 14:58:50.9568|TRACE|DeployPackages|Executing EntityFrameworkMappingGenerator.
+2019-03-02 14:58:51.0117|TRACE|DeployPackages|Executing RestGenerator.
+2019-03-02 14:58:52.4281|TRACE|AssemblyGenerator|Compiling assembly: RestService.dll.
+2019-03-02 14:58:53.0134|INFO|AssemblyGenerator|Warning CS1701: Assuming assembly reference 'Autofac, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da' matches 'Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da', you may need to supply runtime policy.
+2019-03-02 14:58:53.0257|INFO|AssemblyGenerator|104 warnings CS0618: 'Rhetos.LegacyClientException' is obsolete: 'Use ClientException instead.'. At line 271, column 34, file 'c:\Users\Mateja\Documents\Hoteli\dist\HoteliRhetosServer\bin\Generated\RestService.cs'.
+2019-03-02 14:58:53.0362|TRACE|DeployPackages|Executing EntityFrameworkGenerateMetadataFiles.
+2019-03-02 14:58:54.5072|TRACE|DeployPackages|Cleaning old migration data.
+2019-03-02 14:58:54.5989|TRACE|DeployPackages|Deleted 0 columns in data migration schemas, 0 remaining.
+2019-03-02 14:58:54.6157|TRACE|DeployPackages|Executing data migration scripts.
+2019-03-02 14:58:54.6730|INFO|DataMigration|Execute Rhetos.CommonConcepts\0.9.12\1 - AppliedConcept Options1 Options2.sql (tag 533F534B-388C-4CE1-B8AE-A308542471F5)
+2019-03-02 14:58:54.6936|INFO|DataMigration|Execute Rhetos.CommonConcepts\0.9.14\1 - Claim.Active.sql (tag 323D7F48-433F-49E9-983B-09A4B7317077)
+2019-03-02 14:58:54.7081|INFO|DataMigration|Execute Rhetos.CommonConcepts\0.9.29\1 - RoleInheritsRole renames columns.sql (tag 0D99CDE7-E4CB-4FBF-937B-4ADEEEBC46CE)
+2019-03-02 14:58:54.7245|INFO|DataMigration|Execute Rhetos.CommonConcepts\0.9.29\2 - Permissions to RP and PP.sql (tag 33EA1F9E-1A89-4CF0-9AD3-A8E10BEF2D3C)
+2019-03-02 14:58:54.7245|INFO|DataMigration|Execute Rhetos.CommonConcepts\0.9.35\1 - A new tag in create property.sql (tag E2B91BB7-FED3-45DB-AFB1-61CEF615C2C3)
+2019-03-02 14:58:54.7531|INFO|DataMigration|Execute Rhetos.CommonConcepts\1.3\1 - Clear excess dependencies for subtype id.sql (tag B3D3CD35-D41F-4E70-A490-94CBD12226FF)
+2019-03-02 14:58:54.7666|INFO|DataMigration|Execute Rhetos.CommonConcepts\1.11\1 - DataStructureExtendsInfo to UniqueReferenceInfo.sql (tag 0246E7EA-F2F2-419B-9710-1149838E8604)
+2019-03-02 14:58:54.7769|INFO|DataMigration|Execute Rhetos.CommonConcepts\2.4\1 - KeepSynchronizedMetadata for Polymorphic.sql (tag BD03D06C-2EC3-4322-B46F-A88EEFB88572)
+2019-03-02 14:58:55.2885|TRACE|DeployPackages|Executed 8 of 8 scripts.
+2019-03-02 14:58:55.3015|TRACE|DeployPackages|Upgrading database.
+2019-03-02 14:58:55.5055|TRACE|DeployPackages|DatabaseGenerator removing 0 concept applications.
+2019-03-02 14:58:55.5327|TRACE|DatabaseGenerator Concepts|Creating ModuleInfo Hoteli/Rhetos.DatabaseGenerator.DefaultConcepts.ModuleDatabaseDefinition, ID=819242DE-A110-4EA3-A756-10BB335B4FC0.
+2019-03-02 14:58:55.5746|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Hoteli.Hotel/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=FE1A335D-FF13-431F-AA43-992E9B80F57B.
+2019-03-02 14:58:55.5875|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Hotel.Code/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=4F0B01EB-D75B-4167-AAF9-F67759989B72.
+2019-03-02 14:58:55.6068|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Hotel.Name/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=8CA9F4B6-6E5B-4141-A05E-35F080930EB3.
+2019-03-02 14:58:55.6161|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Hotel.Address/Rhetos.DatabaseGenerator.DefaultConcepts.LongStringPropertyDatabaseDefinition, ID=9653A406-97E3-4A18-9335-C16D48F510D8.
+2019-03-02 14:58:55.6303|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Hoteli.Location/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=15E9F249-7ECD-4D45-ADFF-07A7AD6871BF.
+2019-03-02 14:58:55.6444|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Hotel.Location/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=47267DA6-EDD0-43C7-8480-B1D30AF9B5E1.
+2019-03-02 14:58:55.6444|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Hotel.Location/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=14F4FA8E-F8EC-4194-BA40-6A38D5985803.
+2019-03-02 14:58:55.6688|TRACE|DatabaseGenerator Concepts|Creating UniqueReferenceInfo Hoteli.Location/Rhetos.DatabaseGenerator.DefaultConcepts.UniqueReferenceDatabaseDefinition, ID=F4E59512-DC06-45F8-ADF1-4A007BDDDA12.
+2019-03-02 14:58:55.6845|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Location.Code/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=2AC39442-44AF-47D3-BDC5-EAEDEB0C1B77.
+2019-03-02 14:58:55.6973|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Location.Country/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=3C7BE688-7DF3-407F-99D3-AAB59C7FD335.
+2019-03-02 14:58:55.7070|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Location.County/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=9530AD87-EAF4-4E26-88BC-636EEF388A38.
+2019-03-02 14:58:55.7070|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Location.City/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=A4DD1C4F-7A2E-41F8-A934-92B783507792.
+2019-03-02 14:58:55.7274|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Location.Area/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=7E304A7F-CC3A-4707-95FE-1970590FD9C9.
+2019-03-02 14:58:55.7274|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Hoteli.RoomReservation/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=248E6DA0-0280-438B-9E54-1872960E079D.
+2019-03-02 14:58:55.7519|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.RoomReservation.Code/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=E4264793-0237-48D2-974C-74E4BA3BF575.
+2019-03-02 14:58:55.7575|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Hoteli.Reservation/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=FCD5BA59-ED36-4BE5-941D-42F9FCFA6576.
+2019-03-02 14:58:55.7703|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.RoomReservation.ReservationGuest/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=20DAB4FB-45E1-477E-BBB8-EA7B1964CC89.
+2019-03-02 14:58:55.7703|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.RoomReservation.ReservationGuest/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=C3740916-BE63-47DE-AC30-B0DB155D70A3.
+2019-03-02 14:58:55.7906|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Reservation.Code/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=B40CF659-B03A-4F85-92C3-55B83A73AC3D.
+2019-03-02 14:58:55.7906|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Reservation.DateFrom/Rhetos.DatabaseGenerator.DefaultConcepts.DatePropertyDatabaseDefinition, ID=0593E5AE-8A33-4C76-97E2-147F4260D31D.
+2019-03-02 14:58:55.8064|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Reservation.DateTo/Rhetos.DatabaseGenerator.DefaultConcepts.DatePropertyDatabaseDefinition, ID=188C0F20-D78A-4F93-8BFE-5501E99FD3B7.
+2019-03-02 14:58:55.8182|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Reservation.NumberOfPeople/Rhetos.DatabaseGenerator.DefaultConcepts.IntegerPropertyDatabaseDefinition, ID=10AF4593-79A2-434F-8A8A-571A4D0F5CD2.
+2019-03-02 14:58:55.8333|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Hoteli.Rooms/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=ED7A8415-D709-4C7A-991F-76216A6E07BE.
+2019-03-02 14:58:55.8333|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.RoomReservation.ReservatonRoom/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=E8E61880-6BF8-424F-B8B8-A2E28066B7C6.
+2019-03-02 14:58:55.8518|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.RoomReservation.ReservatonRoom/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=AA25C344-53B1-49C1-A0F5-CB1050CCC286.
+2019-03-02 14:58:55.8518|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Rooms.Code/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=4055A72A-F8AA-48C7-BE3C-7A0A5D819A44.
+2019-03-02 14:58:55.8733|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Rooms.NumberOfPeople/Rhetos.DatabaseGenerator.DefaultConcepts.IntegerPropertyDatabaseDefinition, ID=9E9D6BFD-09A1-45C7-89DB-26011FDEFF2C.
+2019-03-02 14:58:55.8832|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Rooms.RoomOfHotel/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=3EEFCF9E-A75D-4E42-B466-51B48F904D6E.
+2019-03-02 14:58:55.8956|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Rooms.RoomOfHotel/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=F4907EDB-7659-4BD9-A866-84DFD4794817.
+2019-03-02 14:58:55.8956|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Rooms.TypeOfRoom/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=CFB1C1AD-1EDF-4D30-AC11-B1DAEE8558D3.
+2019-03-02 14:58:55.9155|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Hoteli.Person/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=E71B6237-CA44-4D09-B51F-C4B036F43990.
+2019-03-02 14:58:55.9155|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Reservation.Guest/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=DEFAA5B5-9FA4-4D5C-BA9A-C0DF8B700D44.
+2019-03-02 14:58:55.9315|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Reservation.Guest/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=3D5EAFDB-3432-4216-8473-9795EEF36257.
+2019-03-02 14:58:55.9315|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Person.Code/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=04DA2D90-393B-472B-B8B3-6443BB518077.
+2019-03-02 14:58:55.9456|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Person.Identifier/Rhetos.DatabaseGenerator.DefaultConcepts.LongStringPropertyDatabaseDefinition, ID=F97747F0-2576-4775-8C9F-817EA0C41435.
+2019-03-02 14:58:55.9568|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Person.Name/Rhetos.DatabaseGenerator.DefaultConcepts.LongStringPropertyDatabaseDefinition, ID=B2A1172F-93CA-499E-BFA0-54C8B72F8495.
+2019-03-02 14:58:55.9568|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Person.Surname/Rhetos.DatabaseGenerator.DefaultConcepts.LongStringPropertyDatabaseDefinition, ID=F7E4AF42-DEFF-41E0-AB1A-B363EF49F816.
+2019-03-02 14:58:55.9757|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Person.Address/Rhetos.DatabaseGenerator.DefaultConcepts.LongStringPropertyDatabaseDefinition, ID=DED9CCD6-B174-4497-B3FA-C9F86AA07466.
+2019-03-02 14:58:55.9757|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Person.isGuest/Rhetos.DatabaseGenerator.DefaultConcepts.BoolPropertyDatabaseDefinition, ID=ECBFFD94-7FEB-42CD-BBDA-9F04674FD734.
+2019-03-02 14:58:55.9967|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Person.isEmployee/Rhetos.DatabaseGenerator.DefaultConcepts.BoolPropertyDatabaseDefinition, ID=189A4458-FA75-450A-82C4-9E5CBE0696AF.
+2019-03-02 14:58:56.0055|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Person.isOwner/Rhetos.DatabaseGenerator.DefaultConcepts.BoolPropertyDatabaseDefinition, ID=B94D46C7-B4FD-402F-ADF6-3D2774E32759.
+2019-03-02 14:58:56.0055|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Person.Discount/Rhetos.DatabaseGenerator.DefaultConcepts.IntegerPropertyDatabaseDefinition, ID=4084D576-014E-429F-8F92-6BC86CD26534.
+2019-03-02 14:58:56.0258|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Hoteli.SaloonPerson/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=A2BC0443-5564-4843-B640-8518ECA9373F.
+2019-03-02 14:58:56.0356|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.SaloonPerson.Code/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=55B7AFA9-5D33-4F46-A8BD-CCFD8A0C0852.
+2019-03-02 14:58:56.0356|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.SaloonPerson.OwnerName/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=54589773-AD50-46CD-B4E2-9FC4171A7EAA.
+2019-03-02 14:58:56.0532|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.SaloonPerson.OwnerName/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=5F326966-BDB4-45BC-9AC9-38C04FCB6197.
+2019-03-02 14:58:56.0532|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Hoteli.SaloonHotel/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=469FCD80-8768-44A5-9E9D-124EE2A25D86.
+2019-03-02 14:58:56.0757|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.SaloonHotel.Code/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=85D24767-E607-4836-9418-1DDB0F8896A2.
+2019-03-02 14:58:56.0839|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.SaloonHotel.OwnerName/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=61569D44-0065-4E85-8BA4-E6B2892A4725.
+2019-03-02 14:58:56.0839|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.SaloonHotel.OwnerName/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=14FF5E71-8052-4A04-922A-665C557499E2.
+2019-03-02 14:58:56.0994|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Hoteli.Saloon/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=A74074AD-42CB-468A-8D29-7852E57737C7.
+2019-03-02 14:58:56.0994|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.SaloonPerson.SalonId/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=46D1A363-521A-4844-8EF7-BD805570E875.
+2019-03-02 14:58:56.1151|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.SaloonPerson.SalonId/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=72B763AF-9B7F-4FD1-B941-3AB622F5F102.
+2019-03-02 14:58:56.1336|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.SaloonHotel.SalonId/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=D84A5206-0E8C-4338-90F7-994817AAD9DC.
+2019-03-02 14:58:56.1336|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.SaloonHotel.SalonId/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=90F39238-609F-471C-9012-0E6EB1774534.
+2019-03-02 14:58:56.1547|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Saloon.Code/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=55A159CD-06F8-4477-AD4E-1D2098F4153D.
+2019-03-02 14:58:56.1644|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Saloon.Name/Rhetos.DatabaseGenerator.DefaultConcepts.LongStringPropertyDatabaseDefinition, ID=F0FD85DA-6697-474E-9EA8-A38408AF1B88.
+2019-03-02 14:58:56.1763|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Saloon.HotelSaloon/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=4BEF8F17-8979-4D75-B940-DF1C0B5B0B0B.
+2019-03-02 14:58:56.1763|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Saloon.HotelSaloon/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=DC0224E8-4BE5-4A9A-A189-96546C3C9769.
+2019-03-02 14:58:56.2009|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Hoteli.ProductPerson/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=E4976C6A-7DC0-4C62-AD91-FEF32B7E2C8C.
+2019-03-02 14:58:56.2109|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.ProductPerson.Code/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=BFBF5F1D-5C44-4A0C-AEFE-9C79B7123999.
+2019-03-02 14:58:56.2109|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.ProductPerson.OwnerName/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=136D7283-B186-490E-84DC-92CDED82F854.
+2019-03-02 14:58:56.2313|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.ProductPerson.OwnerName/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=DCF96DE3-0067-4641-924C-4B76709859CF.
+2019-03-02 14:58:56.2435|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Hoteli.ProductHotel/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=68BE79AB-7AE6-437B-B3FF-7DD3FA37089C.
+2019-03-02 14:58:56.2435|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.ProductHotel.Code/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=1AE6C14E-F0AF-49B4-AEB8-DA6516CAA905.
+2019-03-02 14:58:56.2646|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.ProductHotel.OwnerName/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=D6A011D7-15F3-4B42-A3BE-8CCD8D411CBC.
+2019-03-02 14:58:56.2744|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.ProductHotel.OwnerName/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=D9DA2CA2-9CAE-4BC0-B887-7DCAB783DBD5.
+2019-03-02 14:58:56.2845|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Hoteli.Product/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=D9728D03-C48B-4697-ACC7-CEFCF8BE7261.
+2019-03-02 14:58:56.2845|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.ProductPerson.ProductId/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=49922D41-853F-46A6-8859-2A6D25D24726.
+2019-03-02 14:58:56.3034|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.ProductPerson.ProductId/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=098265FE-097E-4570-8CEB-D0B5FD82C633.
+2019-03-02 14:58:56.3034|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.ProductHotel.ProductId/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=50B3CBE3-3DAF-44FA-BF0C-71A2B3E1F812.
+2019-03-02 14:58:56.3232|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.ProductHotel.ProductId/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=72DAC25B-5736-4AB6-8537-1E7ABD884DCA.
+2019-03-02 14:58:56.3343|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Product.Code/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=9788C1B3-3282-4116-B934-C5BE30C9F3CF.
+2019-03-02 14:58:56.3343|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Product.Title/Rhetos.DatabaseGenerator.DefaultConcepts.LongStringPropertyDatabaseDefinition, ID=167144F6-53A4-4F97-A2E7-9328A9EC8344.
+2019-03-02 14:58:56.3545|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Product.HotelSaloon/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=EAE6DFEC-B25E-47D0-B5EF-948F2F6C31D1.
+2019-03-02 14:58:56.3545|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Hoteli.Product.HotelSaloon/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=01DD888E-5634-473D-B957-CD34D2EB5592.
+2019-03-02 14:58:56.4057|TRACE|DatabaseGenerator Concepts|Creating ModuleInfo Common/Rhetos.DatabaseGenerator.DefaultConcepts.ModuleDatabaseDefinition, ID=7F40C062-AF6A-4BF7-8655-D4317314E464.
+2019-03-02 14:58:56.4223|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.AutoCodeCache/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=68ADCFEC-9B7D-4099-AFF8-5DF76845BB66.
+2019-03-02 14:58:56.4280|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.AutoCodeCache.Entity/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=EAEA14A4-F46E-4006-806A-5C13C71134B8.
+2019-03-02 14:58:56.4280|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.AutoCodeCache.Property/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=DCD333D0-D456-4634-9E83-059EC1A88394.
+2019-03-02 14:58:56.4474|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.AutoCodeCache.Grouping/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=A0C4E769-0350-464A-9664-159BF959E768.
+2019-03-02 14:58:56.4609|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.AutoCodeCache.Prefix/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=B1DAE6C6-E1A1-4042-9F9D-588CBEB197F6.
+2019-03-02 14:58:56.4609|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.AutoCodeCache.MinDigits/Rhetos.DatabaseGenerator.DefaultConcepts.IntegerPropertyDatabaseDefinition, ID=FA838725-2601-4924-886D-D9C7648A1E70.
+2019-03-02 14:58:56.4816|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.AutoCodeCache.LastCode/Rhetos.DatabaseGenerator.DefaultConcepts.IntegerPropertyDatabaseDefinition, ID=EFE827E7-C64F-4573-B0C1-BB0BD9065100.
+2019-03-02 14:58:56.4887|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.AutoCodeCache.'Entity Property Grouping Prefix'/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=6A3AC2D0-F0BC-4242-9609-39C67776BD06.
+2019-03-02 14:58:56.4887|TRACE|DatabaseGenerator Concepts|Creating SqlProcedureInfo Common.AutoCodeCacheGetNext/Rhetos.DatabaseGenerator.DefaultConcepts.SqlProcedureDatabaseDefinition, ID=1F434A63-37B8-41B8-A3EF-4ABC2D816A9A.
+2019-03-02 14:58:56.5144|TRACE|DatabaseGenerator Concepts|Creating SqlProcedureInfo Common.AutoCodeCacheUpdate/Rhetos.DatabaseGenerator.DefaultConcepts.SqlProcedureDatabaseDefinition, ID=557A9237-26E8-44D2-B52B-A6EBC69C65CE.
+2019-03-02 14:58:56.5248|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.FilterId/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=DEFE6B88-D063-49C0-9A9A-1564FB601199.
+2019-03-02 14:58:56.5248|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.FilterId.Handle/Rhetos.DatabaseGenerator.DefaultConcepts.GuidPropertyDatabaseDefinition, ID=F21FA26E-0A79-4310-B9E1-FBDB2D203780.
+2019-03-02 14:58:56.5464|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.FilterId.Value/Rhetos.DatabaseGenerator.DefaultConcepts.GuidPropertyDatabaseDefinition, ID=8249BAF1-DE42-40BF-A95A-523F23D3DCF9.
+2019-03-02 14:58:56.5563|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.FilterId.'Handle Value'/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=6D391664-14C1-42D9-85C6-C194B2960A9E.
+2019-03-02 14:58:56.5563|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.KeepSynchronizedMetadata/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=A6C1DA0F-7509-495E-A5A6-58318CA60420.
+2019-03-02 14:58:56.5784|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.KeepSynchronizedMetadata.Target/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=16B7EA80-15A7-4B11-9F1D-785C166021D3.
+2019-03-02 14:58:56.5871|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.KeepSynchronizedMetadata.Source/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=5E326A8F-EDAE-45F7-8813-05422ECEA2E2.
+2019-03-02 14:58:56.5985|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.KeepSynchronizedMetadata.Context/Rhetos.DatabaseGenerator.DefaultConcepts.LongStringPropertyDatabaseDefinition, ID=FFA504F1-4B29-409C-A775-D100D55CB319.
+2019-03-02 14:58:56.5985|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.ExclusiveLock/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=AB2F023C-0CC2-45BB-AF3A-A1A95A0D35DB.
+2019-03-02 14:58:56.6188|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.ExclusiveLock.ResourceType/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=EFB87132-46F3-4EC9-8ED1-067146A5D6DA.
+2019-03-02 14:58:56.6285|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.ExclusiveLock.ResourceID/Rhetos.DatabaseGenerator.DefaultConcepts.GuidPropertyDatabaseDefinition, ID=09763FE0-C2AC-42B4-B5DC-7065A9F21CA2.
+2019-03-02 14:58:56.6285|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.ExclusiveLock.UserName/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=44DCEFFC-E4A8-4736-88ED-E2A4A3083953.
+2019-03-02 14:58:56.6481|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.ExclusiveLock.Workstation/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=620784C1-EACC-4C64-B8A2-FDECDB8A8F76.
+2019-03-02 14:58:56.6481|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.ExclusiveLock.LockStart/Rhetos.DatabaseGenerator.DefaultConcepts.DateTimePropertyDatabaseDefinition, ID=03157501-6B21-4252-936D-37F5548AD4CD.
+2019-03-02 14:58:56.6673|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.ExclusiveLock.LockFinish/Rhetos.DatabaseGenerator.DefaultConcepts.DateTimePropertyDatabaseDefinition, ID=09824A71-2408-4C4A-AC04-CBAFEA205BB0.
+2019-03-02 14:58:56.6768|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.Log/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=DD58A85D-DD26-43AC-BC2C-F72286A20D16.
+2019-03-02 14:58:56.6768|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Log.UserName/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=4D09A765-CEBD-488A-A020-BAF59815048F.
+2019-03-02 14:58:56.6953|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Log.Workstation/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=F4508816-9A7D-47AE-9387-2ABBC8C29DE8.
+2019-03-02 14:58:56.7095|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Log.ContextInfo/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=C1E1199B-552A-4CBD-B305-0AB743218BAD.
+2019-03-02 14:58:56.7095|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Log.Action/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=3584FB0D-3B68-418C-A410-747E131EF517.
+2019-03-02 14:58:56.7286|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Log.TableName/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=98ACB095-5C56-4DB8-81C7-9791AC83D168.
+2019-03-02 14:58:56.7286|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Log.Description/Rhetos.DatabaseGenerator.DefaultConcepts.LongStringPropertyDatabaseDefinition, ID=4E5C9696-D66C-4454-A013-F092D2D02CB1.
+2019-03-02 14:58:56.7451|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Log.ItemId/Rhetos.DatabaseGenerator.DefaultConcepts.GuidPropertyDatabaseDefinition, ID=29FC59DF-1D35-4AB3-B50C-A54B6036F129.
+2019-03-02 14:58:56.7532|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Log.Created/Rhetos.DatabaseGenerator.DefaultConcepts.DateTimePropertyDatabaseDefinition, ID=C37A097C-7EF3-48D1-97A4-642D4AF6E338.
+2019-03-02 14:58:56.7532|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.LogReader/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=AE287499-203F-48F7-8572-F000EBBB232A.
+2019-03-02 14:58:56.7770|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.LogRelatedItem/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=F8E63852-2C19-4782-AFC7-EF988493BFEF.
+2019-03-02 14:58:56.7856|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.LogRelatedItem.TableName/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=17C55DCE-6AC8-446A-9776-5DAB0286A57E.
+2019-03-02 14:58:56.7856|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.LogRelatedItem.Relation/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=511C6EA9-0D13-4F56-B13C-CDC1AA3D051F.
+2019-03-02 14:58:56.8098|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.LogRelatedItem.Log/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=91AE617F-F11E-4E4F-B8D6-B4C51EE329E0.
+2019-03-02 14:58:56.8181|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.LogRelatedItem.Log/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=88E98B6B-9C1D-452A-BB08-D8255D0F3E46.
+2019-03-02 14:58:56.8181|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.LogRelatedItem.ItemId/Rhetos.DatabaseGenerator.DefaultConcepts.GuidPropertyDatabaseDefinition, ID=0EAF58B9-1DC5-4D8B-BCAB-5E4CECC42029.
+2019-03-02 14:58:56.8346|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.LogRelatedItemReader/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=FE0773B7-AB4A-415F-833B-7B6F4EB52C18.
+2019-03-02 14:58:56.8346|TRACE|DatabaseGenerator Concepts|Creating SqlDefaultPropertyInfo Common.Log.Created/Rhetos.DatabaseGenerator.DefaultConcepts.SqlDefaultPropertyDatabaseDefinition, ID=E08CF176-C8CC-4031-B327-8ECA2DFF2677.
+2019-03-02 14:58:56.8568|TRACE|DatabaseGenerator Concepts|Creating SqlDefaultPropertyInfo Common.Log.UserName/Rhetos.DatabaseGenerator.DefaultConcepts.SqlDefaultPropertyDatabaseDefinition, ID=6BD9C0E9-61AC-4AE5-B763-68FA164CD623.
+2019-03-02 14:58:56.8645|TRACE|DatabaseGenerator Concepts|Creating SqlDefaultPropertyInfo Common.Log.Workstation/Rhetos.DatabaseGenerator.DefaultConcepts.SqlDefaultPropertyDatabaseDefinition, ID=DBBE6623-B269-4CA0-822E-A2CB6B8B393F.
+2019-03-02 14:58:56.8788|TRACE|DatabaseGenerator Concepts|Creating SqlDefaultPropertyInfo Common.Log.ContextInfo/Rhetos.DatabaseGenerator.DefaultConcepts.SqlDefaultPropertyDatabaseDefinition, ID=A4D79B07-2A8A-4CDF-8D98-45F7E1560D2D.
+2019-03-02 14:58:56.8788|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.Log.'TableName Action'/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=32E67CED-1DF2-43C8-A8BF-BA856C5B4111.
+2019-03-02 14:58:56.9032|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.RelatedEventsSource/Rhetos.DatabaseGenerator.DefaultConcepts.SqlQueryableDatabaseDefinition, ID=BC6EC856-8717-4F8E-89A4-1919241E8C18.
+2019-03-02 14:58:56.9032|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.Claim/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=627AD8B9-6459-4BCF-A6E4-0F3CE534C299.
+2019-03-02 14:58:56.9154|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Claim.ClaimResource/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=5B9279CA-A913-4FAE-B750-8E4F5EDC2954.
+2019-03-02 14:58:56.9154|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Claim.ClaimRight/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=92F0C0DA-691A-4269-AFFE-D4BAEE149F02.
+2019-03-02 14:58:56.9364|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Claim.Active/Rhetos.DatabaseGenerator.DefaultConcepts.BoolPropertyDatabaseDefinition, ID=CE0A121F-43AE-4BB4-8D57-1CC39E592B5E.
+2019-03-02 14:58:56.9445|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.Claim/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=D16A7B71-FC37-4F0B-B38F-59BFB42D6315.
+2019-03-02 14:58:56.9445|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.Principal/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=ACCCD74E-9D38-4A08-B7F5-85FE8BEF18BD.
+2019-03-02 14:58:56.9680|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Principal.Name/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=D53AF963-A52B-48C6-84EE-B98D7D445DA5.
+2019-03-02 14:58:56.9790|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.Principal/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=194A2A9E-D729-4061-8E7E-D92EFF211AB2.
+2019-03-02 14:58:56.9887|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.PrincipalHasRole/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=2A991A7E-FF8D-483A-BAA5-4FEC6A7A8BCE.
+2019-03-02 14:58:56.9887|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.PrincipalHasRole.Principal/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=04D42E24-E1E0-4049-B5C5-1577BC9A9C64.
+2019-03-02 14:58:57.0083|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.PrincipalHasRole.Principal/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=86169247-B57A-49E9-9D68-FED53C88EA5F.
+2019-03-02 14:58:57.0083|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.Role/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=83332523-EB2C-4590-A9FC-BCBFBD342E07.
+2019-03-02 14:58:57.0245|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.PrincipalHasRole.Role/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=C913671A-5E66-4B08-8F0B-2B4AF540999A.
+2019-03-02 14:58:57.0356|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.PrincipalHasRole.Role/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=A93A01DF-D162-433E-BB79-3A72A0CC83FF.
+2019-03-02 14:58:57.0356|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.PrincipalHasRole.'Principal Role'/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=DD904CF7-8673-4B1F-AE70-BB4A36AAB6D0.
+2019-03-02 14:58:57.0598|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.PrincipalHasRole/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=490D154A-DD40-4FC1-96BE-BFF731EC2282.
+2019-03-02 14:58:57.0666|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.Role.Name/Rhetos.DatabaseGenerator.DefaultConcepts.ShortStringPropertyDatabaseDefinition, ID=6B002E1D-67A5-472A-BFB9-B627C2557155.
+2019-03-02 14:58:57.0666|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.Role/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=FB7B1022-262C-4D88-B2E5-DBA05CB39528.
+2019-03-02 14:58:57.0872|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.RoleInheritsRole/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=C909B7E1-3F96-4E4B-9604-300635419E24.
+2019-03-02 14:58:57.0872|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.RoleInheritsRole.UsersFrom/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=A40012B3-5C50-4210-BD14-5503AC0C9A2E.
+2019-03-02 14:58:57.1033|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.RoleInheritsRole.UsersFrom/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=54C45987-B8E2-43DE-B61C-AA78A08B6E3D.
+2019-03-02 14:58:57.1142|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.RoleInheritsRole.PermissionsFrom/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=CFBA59B4-CE1F-461D-A887-80A43864D725.
+2019-03-02 14:58:57.1142|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.RoleInheritsRole.PermissionsFrom/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=D2957FD8-2984-40D4-90F9-DDEE413203F7.
+2019-03-02 14:58:57.1142|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.RoleInheritsRole.'UsersFrom PermissionsFrom'/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=B536A831-FAD0-467C-8EA0-3CEA33255776.
+2019-03-02 14:58:57.1356|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.RoleInheritsRole/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=D4117BA4-B9BF-4A0D-B51B-160A5A8CDC7E.
+2019-03-02 14:58:57.1465|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.PrincipalPermission/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=7258E168-8B37-4DB6-BDF9-7CC65BDE6522.
+2019-03-02 14:58:57.1465|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.PrincipalPermission.Principal/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=BAE14A2C-7578-4C77-8544-119B6331F3AD.
+2019-03-02 14:58:57.1642|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.PrincipalPermission.Principal/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=514193D5-275E-4D95-8951-8CBD691427EF.
+2019-03-02 14:58:57.1756|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.PrincipalPermission.Claim/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=D469F46C-B6C1-422C-9F3F-FE104F9617CA.
+2019-03-02 14:58:57.1756|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.PrincipalPermission.Claim/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=397E110A-7B19-483D-88F8-1007D7ADAB68.
+2019-03-02 14:58:57.2036|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.PrincipalPermission.IsAuthorized/Rhetos.DatabaseGenerator.DefaultConcepts.BoolPropertyDatabaseDefinition, ID=25467910-EA6C-4672-A374-746F4FD33883.
+2019-03-02 14:58:57.2135|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.PrincipalPermission.'Principal Claim'/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=3E03B33E-75CF-454A-BEC7-2E4CCA6AF201.
+2019-03-02 14:58:57.2238|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.PrincipalPermission/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=3E51FEBB-E2D8-433A-B01B-C0A9A0D249F1.
+2019-03-02 14:58:57.2238|TRACE|DatabaseGenerator Concepts|Creating DataStructureInfo Common.RolePermission/Rhetos.DatabaseGenerator.DefaultConcepts.EntityDatabaseDefinition, ID=5238EFE7-5DD4-4EFC-AD2B-7E4442A8589D.
+2019-03-02 14:58:57.2436|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.RolePermission.Role/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=8DAA9783-85B0-4DD9-8C23-A6040278E71B.
+2019-03-02 14:58:57.2538|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.RolePermission.Role/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=03FE406A-585C-4EA3-BFA0-BF3AAE242ED2.
+2019-03-02 14:58:57.2538|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.RolePermission.Claim/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyDatabaseDefinition, ID=3C5D3BC2-990E-4C2C-9BC3-F1B1D8310566.
+2019-03-02 14:58:57.2538|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.RolePermission.Claim/Rhetos.DatabaseGenerator.DefaultConcepts.ReferencePropertyConstraintDatabaseDefinition, ID=21E5E19D-04C1-44E8-8717-0AAA96DB5B17.
+2019-03-02 14:58:57.2827|TRACE|DatabaseGenerator Concepts|Creating PropertyInfo Common.RolePermission.IsAuthorized/Rhetos.DatabaseGenerator.DefaultConcepts.BoolPropertyDatabaseDefinition, ID=D71FDC9D-CB1E-4B57-96DF-C909874E9FF9.
+2019-03-02 14:58:57.2855|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.RolePermission.'Role Claim'/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=C4AE0A83-27FA-4F1A-A9EE-266C7B2111ED.
+2019-03-02 14:58:57.2855|TRACE|DatabaseGenerator Concepts|Creating EntityLoggingInfo Common.RolePermission/Rhetos.DatabaseGenerator.DefaultConcepts.EntityLoggingDefinition, ID=CA85A6CB-9971-47B1-8740-0D4E81B89B71.
+2019-03-02 14:58:57.3065|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.Log.ItemId/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=0E7386DC-151E-43A0-9A7F-A31EA7EDBF72.
+2019-03-02 14:58:57.3165|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.LogRelatedItem.TableName/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=D5CBA080-E74E-4E5C-84A2-CD6A47ECFF3E.
+2019-03-02 14:58:57.3165|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.LogRelatedItem.ItemId/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=06411184-9DDE-4406-8A3F-DF87F967EE87.
+2019-03-02 14:58:57.3393|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.LogRelatedItem.Log/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=E2AB6E26-0ED8-4EC1-AE88-81003587DE64.
+2019-03-02 14:58:57.3393|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.PrincipalHasRole.Principal/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=6A09769A-AC0F-4977-9C65-003DBBB85175.
+2019-03-02 14:58:57.3566|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.RoleInheritsRole.UsersFrom/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=2CCAD264-BB2C-47E8-BDC7-D3095CD866E2.
+2019-03-02 14:58:57.3643|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.PrincipalPermission.Principal/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=165BC23A-B6FE-4B65-BF69-3F74FB217183.
+2019-03-02 14:58:57.3643|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.PrincipalPermission.Claim/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=9A9449B7-FD56-4F56-BBB3-AA59914A6194.
+2019-03-02 14:58:57.3876|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.RolePermission.Role/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=992D5B70-E9FD-46F6-BFFE-CF4E7751029E.
+2019-03-02 14:58:57.3958|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.RolePermission.Claim/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=83C7BF56-45D0-4604-A73A-0A25E7130D4D.
+2019-03-02 14:58:57.3958|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.ExclusiveLock.'ResourceID ResourceType'/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=7D4BD319-CCF7-421F-9876-C996C9A276A3.
+2019-03-02 14:58:57.4154|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.Claim.'ClaimResource ClaimRight'/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=58B2E05E-EE21-4AD9-BA66-D26EAC980BD9.
+2019-03-02 14:58:57.4154|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.Principal.Name/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=3E93CB2F-64BE-4A69-BC0F-B1806D405BDB.
+2019-03-02 14:58:57.4371|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Common.Role.Name/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=33423856-8877-4FEA-9D8F-248B736EB587.
+2019-03-02 14:58:57.4474|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Hoteli.Hotel.Code/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=A0AFA7C3-3451-4CFC-AA64-73A3364E8108.
+2019-03-02 14:58:57.4569|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Hoteli.Location.Code/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=A70438E9-40FD-4362-83D3-1C1298451BF8.
+2019-03-02 14:58:57.4569|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Hoteli.RoomReservation.Code/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=02172173-7057-40AB-8458-0273A8B57156.
+2019-03-02 14:58:57.4736|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Hoteli.Reservation.Code/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=CD49BB26-60AE-4E9F-80C2-DDD5E105147A.
+2019-03-02 14:58:57.4736|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Hoteli.Rooms.Code/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=9959BD22-6BB6-4EC3-B385-FA505C14F8B5.
+2019-03-02 14:58:57.4933|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Hoteli.Person.Code/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=F074C1C6-197F-40B5-A6A5-239EDE9A54C2.
+2019-03-02 14:58:57.5056|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Hoteli.SaloonPerson.Code/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=D8F5BFA1-C4B0-42DB-AE2B-A37880C88637.
+2019-03-02 14:58:57.5056|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Hoteli.SaloonHotel.Code/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=73E59082-A184-47EE-9F94-F4A57B225F84.
+2019-03-02 14:58:57.5238|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Hoteli.Saloon.Code/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=D2E63C5D-E754-4541-BC64-C2E6272785CC.
+2019-03-02 14:58:57.5238|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Hoteli.ProductPerson.Code/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=469C7C21-8F55-4AEA-8380-B1264963D591.
+2019-03-02 14:58:57.5376|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Hoteli.ProductHotel.Code/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=40110A07-E432-4F81-972E-90726A4C002A.
+2019-03-02 14:58:57.5376|TRACE|DatabaseGenerator Concepts|Creating SqlIndexMultipleInfo Hoteli.Product.Code/Rhetos.DatabaseGenerator.DefaultConcepts.SqlIndexMultipleDatabaseDefinition, ID=BE2D4F6A-7B79-40F3-B2C9-6043D2078F6B.
+2019-03-02 14:58:57.5544|INFO|DeployPackages|DatabaseGenerator creating 193 concept applications.
+2019-03-02 14:58:58.8422|TRACE|DeployPackages|Deleting redundant migration data.
+2019-03-02 14:58:58.8749|TRACE|DeployPackages|Deleted 12 columns in data migration schemas, 7 remaining.
+2019-03-02 14:58:58.8878|TRACE|DeployPackages|Uploading DSL scripts.
+2019-03-02 14:58:58.9193|TRACE|DeployPackages|Uploaded 7 DSL scripts to database.
+2019-03-02 14:58:58.9435|TRACE|DeployPackages|Loading generated plugins.
+2019-03-02 14:58:59.1456|TRACE|DeployPackages|Initialization KeepSynchronizedRecomputeOnDeploy.
+2019-03-02 14:59:01.0589|TRACE|DeployPackages|Initialization ClaimGenerator.
+2019-03-02 14:59:01.3364|TRACE|ClaimGenerator Claims|Inserting claims Common.AddToLog.Execute, Common.AutoCodeCache.Edit, Common.AutoCodeCache.New, Common.AutoCodeCache.Read, Common.AutoCodeCache.Remove, Common.Claim.Edit, Common.Claim.New, Common.Claim.Read, Common.Claim.Remove, Common.ExclusiveLock.Edit, Common.ExclusiveLock.New, Common.ExclusiveLock.Read, Common.ExclusiveLock.Remove, Common.FilterId.Edit, Common.FilterId.New, Common.FilterId.Read, Common.FilterId.Remove, Common.KeepSynchronizedMetadata.Edit, Common.KeepSynchronizedMetadata.New, Common.KeepSynchronizedMetadata.Read, Common.KeepSynchronizedMetadata.Remove, Common.Log.Edit, Common.Log.New, Common.Log.Read, Common.Log.Remove, Common.LogReader.Read, Common.LogRelatedItem.Edit, Common.LogRelatedItem.New, Common.LogRelatedItem.Read, Common.LogRelatedItem.Remove, Common.LogRelatedItemReader.Read, Common.MyClaim.Read, Common.Principal.Edit, Common.Principal.New, Common.Principal.Read, Common.Principal.Remove, Common.PrincipalHasRole.Edit, Common.PrincipalHasRole.New, Common.PrincipalHasRole.Read, Common.PrincipalHasRole.Remove, Common.PrincipalPermission.Edit, Common.PrincipalPermission.New, Common.PrincipalPermission.Read, Common.PrincipalPermission.Remove, Common.RelatedEventsSource.Read, Common.ReleaseLock.Execute, Common.Role.Edit, Common.Role.New, Common.Role.Read, Common.Role.Remove, Common.RoleInheritsRole.Edit, Common.RoleInheritsRole.New, Common.RoleInheritsRole.Read, Common.RoleInheritsRole.Remove, Common.RolePermission.Edit, Common.RolePermission.New, Common.RolePermission.Read, Common.RolePermission.Remove, Common.SetLock.Execute, Hoteli.Hotel.Edit, Hoteli.Hotel.New, Hoteli.Hotel.Read, Hoteli.Hotel.Remove, Hoteli.Location.Edit, Hoteli.Location.New, Hoteli.Location.Read, Hoteli.Location.Remove, Hoteli.Person.Edit, Hoteli.Person.New, Hoteli.Person.Read, Hoteli.Person.Remove, Hoteli.Product.Edit, Hoteli.Product.New, Hoteli.Product.Read, Hoteli.Product.Remove, Hoteli.ProductHotel.Edit, Hoteli.ProductHotel.New, Hoteli.ProductHotel.Read, Hoteli.ProductHotel.Remove, Hoteli.ProductPerson.Edit, Hoteli.ProductPerson.New, Hoteli.ProductPerson.Read, Hoteli.ProductPerson.Remove, Hoteli.Reservation.Edit, Hoteli.Reservation.New, Hoteli.Reservation.Read, Hoteli.Reservation.Remove, Hoteli.RoomReservation.Edit, Hoteli.RoomReservation.New, Hoteli.RoomReservation.Read, Hoteli.RoomReservation.Remove, Hoteli.Rooms.Edit, Hoteli.Rooms.New, Hoteli.Rooms.Read, Hoteli.Rooms.Remove, Hoteli.Saloon.Edit, Hoteli.Saloon.New, Hoteli.Saloon.Read, Hoteli.Saloon.Remove, Hoteli.SaloonHotel.Edit, Hoteli.SaloonHotel.New, Hoteli.SaloonHotel.Read, Hoteli.SaloonHotel.Remove, Hoteli.SaloonPerson.Edit, Hoteli.SaloonPerson.New, Hoteli.SaloonPerson.Read, Hoteli.SaloonPerson.Remove.
+2019-03-02 14:59:02.2772|TRACE|DeployPackages|Updated Web.config modification date to restart server.
+2019-03-02 14:59:02.2881|TRACE|DeployPackages|Done.
+2019-03-03 11:01:30.9775|TRACE|DeployPackages|Moving old generated files to cache.
+2019-03-03 11:01:31.5166|TRACE|DeployPackages|Getting packages.
+2019-03-03 11:01:31.5687|TRACE|PackageDownloader|Not looking for Rhetos.CommonConcepts (version not specified) in packages cache because the request does not specify an exact version.
+2019-03-03 11:01:34.4614|TRACE|PackageDownloader|Downloading NuGet package Rhetos.CommonConcepts 2.11.0 from https://www.nuget.org/api/v2/.
+2019-03-03 11:01:34.8368|TRACE|NuGet|'Rhetos.CommonConcepts 2.11.0' already installed.
+2019-03-03 11:01:34.8612|TRACE|PackageDownloader|Not looking for Rhetos.RestGenerator (version not specified) in packages cache because the request does not specify an exact version.
+2019-03-03 11:01:35.2170|TRACE|PackageDownloader|Downloading NuGet package Rhetos.RestGenerator 2.5.0 from https://www.nuget.org/api/v2/.
+2019-03-03 11:01:35.2568|TRACE|NuGet|'Rhetos.RestGenerator 2.5.0' already installed.
+2019-03-03 11:01:35.2568|TRACE|PackageDownloader|Reading package Hoteli from unpacked source folder without metadata file.
+2019-03-03 11:01:35.2683|TRACE|DeployPackages|Reading Hoteli from source without metadata.
+2019-03-03 11:01:35.4378|TRACE|Packages|Hoteli 0.0 (requested from configuration file RhetosPackages.config) in C:\Users\Mateja\Documents\Hoteli\src.
+2019-03-03 11:01:35.4378|TRACE|Packages|Rhetos 2.11.0 (requested from Rhetos framework) in C:\Users\Mateja\Documents\Hoteli\dist\HoteliRhetosServer.
+2019-03-03 11:01:35.4378|TRACE|Packages|Rhetos.CommonConcepts 2.11.0 (requested from configuration file RhetosPackages.config) in C:\Users\Mateja\Documents\Hoteli\dist\HoteliRhetosServer\PackagesCache\Rhetos.CommonConcepts.2.11.0.
+2019-03-03 11:01:35.4522|TRACE|Packages|Rhetos.RestGenerator 2.5.0 (requested from configuration file RhetosPackages.config) in C:\Users\Mateja\Documents\Hoteli\dist\HoteliRhetosServer\PackagesCache\Rhetos.RestGenerator.2.5.0.
+2019-03-03 11:01:36.7309|TRACE|DeployPackages|Loading plugins.
+2019-03-03 11:01:46.8466|TRACE|DeployPackages|SQL connection: DataSource=localhost, InitialCatalog=Rhetos
+2019-03-03 11:01:46.8998|TRACE|DeployPackages|Preparing Rhetos database.
+2019-03-03 11:01:47.0065|TRACE|DeployPackages|Parsing DSL scripts.
+2019-03-03 11:01:47.2309|TRACE|DeployPackages|Application model has 728 statements.
+2019-03-03 11:01:47.2354|TRACE|DeployPackages|Compiling DOM assembly.
+2019-03-03 11:01:47.3964|TRACE|AssemblyGenerator|Restoring assembly from cache: ServerDom.Model.dll.
+2019-03-03 11:01:47.4439|TRACE|AssemblyGenerator|Restoring assembly from cache: ServerDom.Orm.dll.
+2019-03-03 11:01:47.5157|TRACE|AssemblyGenerator|Restoring assembly from cache: ServerDom.Repositories.dll.
+2019-03-03 11:01:47.5470|TRACE|DeployPackages|Generated 186 types.
+2019-03-03 11:01:47.5619|TRACE|DeployPackages|Executing EntityFrameworkMappingGenerator.
+2019-03-03 11:01:47.5908|TRACE|DeployPackages|Executing RestGenerator.
+2019-03-03 11:01:48.5665|TRACE|AssemblyGenerator|Restoring assembly from cache: RestService.dll.
+2019-03-03 11:01:48.5932|TRACE|DeployPackages|Executing EntityFrameworkGenerateMetadataFiles.
+2019-03-03 11:01:48.6386|TRACE|DeployPackages|Cleaning old migration data.
+2019-03-03 11:01:48.6754|TRACE|DeployPackages|Deleted 0 columns in data migration schemas, 7 remaining.
+2019-03-03 11:01:48.6754|TRACE|DeployPackages|Executing data migration scripts.
+2019-03-03 11:01:48.7313|TRACE|DeployPackages|Executed 0 of 8 scripts.
+2019-03-03 11:01:48.7313|TRACE|DeployPackages|Upgrading database.
+2019-03-03 11:01:49.0906|TRACE|DeployPackages|DatabaseGenerator removing 0 concept applications.
+2019-03-03 11:01:49.0906|TRACE|DeployPackages|DatabaseGenerator creating 0 concept applications.
+2019-03-03 11:01:49.1133|TRACE|DeployPackages|Deleting redundant migration data.
+2019-03-03 11:01:49.1256|TRACE|DeployPackages|Deleted 0 columns in data migration schemas, 7 remaining.
+2019-03-03 11:01:49.1256|TRACE|DeployPackages|Uploading DSL scripts.
+2019-03-03 11:01:49.1465|TRACE|DeployPackages|Uploaded 8 DSL scripts to database.
+2019-03-03 11:01:49.1546|TRACE|DeployPackages|Loading generated plugins.
+2019-03-03 11:01:49.2475|TRACE|DeployPackages|Initialization KeepSynchronizedRecomputeOnDeploy.
+2019-03-03 11:01:50.6766|TRACE|DeployPackages|Initialization ClaimGenerator.
+2019-03-03 11:01:50.8269|TRACE|DeployPackages|Updated Web.config modification date to restart server.
+2019-03-03 11:01:50.8269|TRACE|DeployPackages|Done.
