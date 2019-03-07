@@ -98,6 +98,10 @@ namespace Rhetos.Rest
             builder.RegisterType<RestServiceHoteliProductPerson>().InstancePerLifetimeScope();
             builder.RegisterType<RestServiceHoteliProductHotel>().InstancePerLifetimeScope();
             builder.RegisterType<RestServiceHoteliProduct>().InstancePerLifetimeScope();
+            builder.RegisterType<RestServiceHoteliInsert5Hotels>().InstancePerLifetimeScope();
+            builder.RegisterType<RestServiceHoteliInsert5Rooms>().InstancePerLifetimeScope();
+            builder.RegisterType<RestServiceHoteliInsert6Rooms>().InstancePerLifetimeScope();
+            builder.RegisterType<RestServiceHoteliReservationInfo>().InstancePerLifetimeScope();
             builder.RegisterType<RestServiceCommonAutoCodeCache>().InstancePerLifetimeScope();
             builder.RegisterType<RestServiceCommonFilterId>().InstancePerLifetimeScope();
             builder.RegisterType<RestServiceCommonKeepSynchronizedMetadata>().InstancePerLifetimeScope();
@@ -152,6 +156,14 @@ namespace Rhetos.Rest
                 new RestServiceHostFactory(), typeof(RestServiceHoteliProductHotel)));
             System.Web.Routing.RouteTable.Routes.Add(new System.ServiceModel.Activation.ServiceRoute("Rest/Hoteli/Product", 
                 new RestServiceHostFactory(), typeof(RestServiceHoteliProduct)));
+            System.Web.Routing.RouteTable.Routes.Add(new System.ServiceModel.Activation.ServiceRoute("Rest/Hoteli/Insert5Hotels", 
+                new RestServiceHostFactory(), typeof(RestServiceHoteliInsert5Hotels)));
+            System.Web.Routing.RouteTable.Routes.Add(new System.ServiceModel.Activation.ServiceRoute("Rest/Hoteli/Insert5Rooms", 
+                new RestServiceHostFactory(), typeof(RestServiceHoteliInsert5Rooms)));
+            System.Web.Routing.RouteTable.Routes.Add(new System.ServiceModel.Activation.ServiceRoute("Rest/Hoteli/Insert6Rooms", 
+                new RestServiceHostFactory(), typeof(RestServiceHoteliInsert6Rooms)));
+            System.Web.Routing.RouteTable.Routes.Add(new System.ServiceModel.Activation.ServiceRoute("Rest/Hoteli/ReservationInfo", 
+                new RestServiceHostFactory(), typeof(RestServiceHoteliReservationInfo)));
             System.Web.Routing.RouteTable.Routes.Add(new System.ServiceModel.Activation.ServiceRoute("Rest/Common/AutoCodeCache", 
                 new RestServiceHostFactory(), typeof(RestServiceCommonAutoCodeCache)));
             System.Web.Routing.RouteTable.Routes.Add(new System.ServiceModel.Activation.ServiceRoute("Rest/Common/FilterId", 
@@ -555,6 +567,8 @@ namespace Rhetos.Rest
     
         public static readonly IDictionary<string, Type[]> FilterTypes = new List<Tuple<string, Type>>
             {
+                Tuple.Create("Hoteli.Negative", typeof(Hoteli.Negative)),
+                Tuple.Create("Negative", typeof(Hoteli.Negative)),
                 Tuple.Create("Hoteli.SystemRequiredCode", typeof(Hoteli.SystemRequiredCode)),
                 Tuple.Create("SystemRequiredCode", typeof(Hoteli.SystemRequiredCode)),
                 /*DataStructureInfo FilterTypes Hoteli.Reservation*/
@@ -1555,6 +1569,138 @@ namespace Rhetos.Rest
         }
 
 /*DataStructureInfo AdditionalOperations Hoteli.Product*/
+    }
+    
+    [System.ServiceModel.ServiceContract]
+    [System.ServiceModel.Activation.AspNetCompatibilityRequirements(RequirementsMode = System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed)]
+    public class RestServiceHoteliInsert5Hotels
+    {
+        private ServiceUtility _serviceUtility;
+
+        public RestServiceHoteliInsert5Hotels(ServiceUtility serviceUtility) 
+        {
+            _serviceUtility = serviceUtility;
+        }
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public void ExecuteHoteliInsert5Hotels(Hoteli.Insert5Hotels action)
+        {
+            _serviceUtility.Execute<Hoteli.Insert5Hotels>(action);
+        }
+    }
+
+
+    [System.ServiceModel.ServiceContract]
+    [System.ServiceModel.Activation.AspNetCompatibilityRequirements(RequirementsMode = System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed)]
+    public class RestServiceHoteliInsert5Rooms
+    {
+        private ServiceUtility _serviceUtility;
+
+        public RestServiceHoteliInsert5Rooms(ServiceUtility serviceUtility) 
+        {
+            _serviceUtility = serviceUtility;
+        }
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public void ExecuteHoteliInsert5Rooms(Hoteli.Insert5Rooms action)
+        {
+            _serviceUtility.Execute<Hoteli.Insert5Rooms>(action);
+        }
+    }
+
+
+    [System.ServiceModel.ServiceContract]
+    [System.ServiceModel.Activation.AspNetCompatibilityRequirements(RequirementsMode = System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed)]
+    public class RestServiceHoteliInsert6Rooms
+    {
+        private ServiceUtility _serviceUtility;
+
+        public RestServiceHoteliInsert6Rooms(ServiceUtility serviceUtility) 
+        {
+            _serviceUtility = serviceUtility;
+        }
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public void ExecuteHoteliInsert6Rooms(Hoteli.Insert6Rooms action)
+        {
+            _serviceUtility.Execute<Hoteli.Insert6Rooms>(action);
+        }
+    }
+
+
+    [System.ServiceModel.ServiceContract]
+    [System.ServiceModel.Activation.AspNetCompatibilityRequirements(RequirementsMode = System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed)]
+    public class RestServiceHoteliReservationInfo
+    {
+        private ServiceUtility _serviceUtility;
+        /*DataStructureInfo AdditionalPropertyInitialization Hoteli.ReservationInfo*/
+
+        public RestServiceHoteliReservationInfo(ServiceUtility serviceUtility/*DataStructureInfo AdditionalPropertyConstructorParameter Hoteli.ReservationInfo*/)
+        {
+            _serviceUtility = serviceUtility;
+            /*DataStructureInfo AdditionalPropertyConstructorSetProperties Hoteli.ReservationInfo*/
+        }
+    
+        public static readonly IDictionary<string, Type[]> FilterTypes = new List<Tuple<string, Type>>
+            {
+                /*DataStructureInfo FilterTypes Hoteli.ReservationInfo*/
+            }
+            .GroupBy(typeName => typeName.Item1)
+            .ToDictionary(g => g.Key, g => g.Select(typeName => typeName.Item2).Distinct().ToArray());
+
+        // [Obsolete] parameters: filter, fparam, genericfilter (use filters), page, psize (use top and skip).
+        [OperationContract]
+        [WebGet(UriTemplate = "/?filter={filter}&fparam={fparam}&genericfilter={genericfilter}&filters={filters}&top={top}&skip={skip}&page={page}&psize={psize}&sort={sort}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public RecordsResult<Hoteli.ReservationInfo> Get(string filter, string fparam, string genericfilter, string filters, int top, int skip, int page, int psize, string sort)
+        {
+            var data = _serviceUtility.GetData<Hoteli.ReservationInfo>(filter, fparam, genericfilter, filters, FilterTypes, top, skip, page, psize, sort,
+                readRecords: true, readTotalCount: false);
+            return new RecordsResult<Hoteli.ReservationInfo> { Records = data.Records };
+        }
+
+        [Obsolete]
+        [OperationContract]
+        [WebGet(UriTemplate = "/Count?filter={filter}&fparam={fparam}&genericfilter={genericfilter}&filters={filters}&sort={sort}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public CountResult GetCount(string filter, string fparam, string genericfilter, string filters, string sort)
+        {
+            var data = _serviceUtility.GetData<Hoteli.ReservationInfo>(filter, fparam, genericfilter, filters, FilterTypes, 0, 0, 0, 0, sort,
+                readRecords: false, readTotalCount: true);
+            return new CountResult { TotalRecords = data.TotalCount };
+        }
+
+        // [Obsolete] parameters: filter, fparam, genericfilter (use filters).
+        [OperationContract]
+        [WebGet(UriTemplate = "/TotalCount?filter={filter}&fparam={fparam}&genericfilter={genericfilter}&filters={filters}&sort={sort}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public TotalCountResult GetTotalCount(string filter, string fparam, string genericfilter, string filters, string sort)
+        {
+            var data = _serviceUtility.GetData<Hoteli.ReservationInfo>(filter, fparam, genericfilter, filters, FilterTypes, 0, 0, 0, 0, sort,
+                readRecords: false, readTotalCount: true);
+            return new TotalCountResult { TotalCount = data.TotalCount };
+        }
+
+        // [Obsolete] parameters: filter, fparam, genericfilter (use filters), page, psize (use top and skip).
+        [OperationContract]
+        [WebGet(UriTemplate = "/RecordsAndTotalCount?filter={filter}&fparam={fparam}&genericfilter={genericfilter}&filters={filters}&top={top}&skip={skip}&page={page}&psize={psize}&sort={sort}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public RecordsAndTotalCountResult<Hoteli.ReservationInfo> GetRecordsAndTotalCount(string filter, string fparam, string genericfilter, string filters, int top, int skip, int page, int psize, string sort)
+        {
+            return _serviceUtility.GetData<Hoteli.ReservationInfo>(filter, fparam, genericfilter, filters, FilterTypes, top, skip, page, psize, sort,
+                readRecords: true, readTotalCount: true);
+        }
+
+        [OperationContract]
+        [WebGet(UriTemplate = "/{id}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public Hoteli.ReservationInfo GetById(string id)
+        {
+            var result = _serviceUtility.GetDataById<Hoteli.ReservationInfo>(id);
+            if (result == null)
+                throw new Rhetos.LegacyClientException("There is no resource of this type with a given ID.") { HttpStatusCode = HttpStatusCode.NotFound, Severe = false };
+            return result;
+        }
+
+        /*DataStructureInfo AdditionalOperations Hoteli.ReservationInfo*/
     }
     
     [System.ServiceModel.ServiceContract]

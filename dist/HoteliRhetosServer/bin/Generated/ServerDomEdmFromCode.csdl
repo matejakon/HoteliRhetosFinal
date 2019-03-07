@@ -95,8 +95,8 @@
           <Property Name="ID" Type="Guid" Nullable="false" />
           <Property Name="TableName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Relation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="LogID" Type="Guid" />
           <Property Name="ItemId" Type="Guid" />
+          <Property Name="LogID" Type="Guid" />
           <NavigationProperty Name="Log" Relationship="Self.Common_LogRelatedItemReader_Log" FromRole="Common_LogRelatedItemReader_Log_Source" ToRole="Common_LogRelatedItemReader_Log_Target" />
         </EntityType>
         <EntityType Name="Common_Principal" customannotation:ClrType="Common.Queryable.Common_Principal, ServerDom.Model, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
@@ -182,9 +182,7 @@
           <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="LocationID" Type="Guid" />
           <NavigationProperty Name="Extension_Location" Relationship="Self.Hoteli_Location_Base" FromRole="Hoteli_Location_Base_Target" ToRole="Hoteli_Location_Base_Source" />
-          <NavigationProperty Name="Location" Relationship="Self.Hoteli_Hotel_Location" FromRole="Hoteli_Hotel_Location_Source" ToRole="Hoteli_Hotel_Location_Target" />
         </EntityType>
         <EntityType Name="Hoteli_Location" customannotation:ClrType="Common.Queryable.Hoteli_Location, ServerDom.Model, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <Key>
@@ -230,9 +228,9 @@
           <Property Name="ID" Type="Guid" Nullable="false" />
           <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="OwnerNameID" Type="Guid" />
-          <Property Name="ProductIdID" Type="Guid" />
+          <Property Name="ProductID" Type="Guid" />
           <NavigationProperty Name="OwnerName" Relationship="Self.Hoteli_ProductHotel_OwnerName" FromRole="Hoteli_ProductHotel_OwnerName_Source" ToRole="Hoteli_ProductHotel_OwnerName_Target" />
-          <NavigationProperty Name="ProductId" Relationship="Self.Hoteli_ProductHotel_ProductId" FromRole="Hoteli_ProductHotel_ProductId_Source" ToRole="Hoteli_ProductHotel_ProductId_Target" />
+          <NavigationProperty Name="Product" Relationship="Self.Hoteli_ProductHotel_Product" FromRole="Hoteli_ProductHotel_Product_Source" ToRole="Hoteli_ProductHotel_Product_Target" />
         </EntityType>
         <EntityType Name="Hoteli_ProductPerson" customannotation:ClrType="Common.Queryable.Hoteli_ProductPerson, ServerDom.Model, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <Key>
@@ -241,9 +239,9 @@
           <Property Name="ID" Type="Guid" Nullable="false" />
           <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="OwnerNameID" Type="Guid" />
-          <Property Name="ProductIdID" Type="Guid" />
+          <Property Name="ProductID" Type="Guid" />
           <NavigationProperty Name="OwnerName" Relationship="Self.Hoteli_ProductPerson_OwnerName" FromRole="Hoteli_ProductPerson_OwnerName_Source" ToRole="Hoteli_ProductPerson_OwnerName_Target" />
-          <NavigationProperty Name="ProductId" Relationship="Self.Hoteli_ProductPerson_ProductId" FromRole="Hoteli_ProductPerson_ProductId_Source" ToRole="Hoteli_ProductPerson_ProductId_Target" />
+          <NavigationProperty Name="Product" Relationship="Self.Hoteli_ProductPerson_Product" FromRole="Hoteli_ProductPerson_Product_Source" ToRole="Hoteli_ProductPerson_Product_Target" />
         </EntityType>
         <EntityType Name="Hoteli_Reservation" customannotation:ClrType="Common.Queryable.Hoteli_Reservation, ServerDom.Model, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <Key>
@@ -257,16 +255,13 @@
           <Property Name="GuestID" Type="Guid" />
           <NavigationProperty Name="Guest" Relationship="Self.Hoteli_Reservation_Guest" FromRole="Hoteli_Reservation_Guest_Source" ToRole="Hoteli_Reservation_Guest_Target" />
         </EntityType>
-        <EntityType Name="Hoteli_RoomReservation" customannotation:ClrType="Common.Queryable.Hoteli_RoomReservation, ServerDom.Model, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <EntityType Name="Hoteli_ReservationInfo" customannotation:ClrType="Common.Queryable.Hoteli_ReservationInfo, ServerDom.Model, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Guid" Nullable="false" />
-          <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ReservationGuestID" Type="Guid" />
-          <Property Name="ReservatonRoomID" Type="Guid" />
-          <NavigationProperty Name="ReservationGuest" Relationship="Self.Hoteli_RoomReservation_ReservationGuest" FromRole="Hoteli_RoomReservation_ReservationGuest_Source" ToRole="Hoteli_RoomReservation_ReservationGuest_Target" />
-          <NavigationProperty Name="ReservatonRoom" Relationship="Self.Hoteli_RoomReservation_ReservatonRoom" FromRole="Hoteli_RoomReservation_ReservatonRoom_Source" ToRole="Hoteli_RoomReservation_ReservatonRoom_Target" />
+          <Property Name="NumberOfRooms" Type="Int32" />
+          <NavigationProperty Name="Base" Relationship="Self.Hoteli_ReservationInfo_Base" FromRole="Hoteli_ReservationInfo_Base_Source" ToRole="Hoteli_ReservationInfo_Base_Target" />
         </EntityType>
         <EntityType Name="Hoteli_Rooms" customannotation:ClrType="Common.Queryable.Hoteli_Rooms, ServerDom.Model, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <Key>
@@ -277,7 +272,19 @@
           <Property Name="NumberOfPeople" Type="Int32" />
           <Property Name="RoomOfHotelID" Type="Guid" />
           <Property Name="TypeOfRoom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Extension_ReservationInfo" Relationship="Self.Hoteli_ReservationInfo_Base" FromRole="Hoteli_ReservationInfo_Base_Target" ToRole="Hoteli_ReservationInfo_Base_Source" />
           <NavigationProperty Name="RoomOfHotel" Relationship="Self.Hoteli_Rooms_RoomOfHotel" FromRole="Hoteli_Rooms_RoomOfHotel_Source" ToRole="Hoteli_Rooms_RoomOfHotel_Target" />
+        </EntityType>
+        <EntityType Name="Hoteli_RoomReservation" customannotation:ClrType="Common.Queryable.Hoteli_RoomReservation, ServerDom.Model, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReservationHotelID" Type="Guid" />
+          <Property Name="ReservationRoomID" Type="Guid" />
+          <NavigationProperty Name="ReservationHotel" Relationship="Self.Hoteli_RoomReservation_ReservationHotel" FromRole="Hoteli_RoomReservation_ReservationHotel_Source" ToRole="Hoteli_RoomReservation_ReservationHotel_Target" />
+          <NavigationProperty Name="ReservationRoom" Relationship="Self.Hoteli_RoomReservation_ReservationRoom" FromRole="Hoteli_RoomReservation_ReservationRoom_Source" ToRole="Hoteli_RoomReservation_ReservationRoom_Target" />
         </EntityType>
         <EntityType Name="Hoteli_Saloon" customannotation:ClrType="Common.Queryable.Hoteli_Saloon, ServerDom.Model, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <Key>
@@ -296,9 +303,9 @@
           <Property Name="ID" Type="Guid" Nullable="false" />
           <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="OwnerNameID" Type="Guid" />
-          <Property Name="SalonIdID" Type="Guid" />
+          <Property Name="SalonID" Type="Guid" />
           <NavigationProperty Name="OwnerName" Relationship="Self.Hoteli_SaloonHotel_OwnerName" FromRole="Hoteli_SaloonHotel_OwnerName_Source" ToRole="Hoteli_SaloonHotel_OwnerName_Target" />
-          <NavigationProperty Name="SalonId" Relationship="Self.Hoteli_SaloonHotel_SalonId" FromRole="Hoteli_SaloonHotel_SalonId_Source" ToRole="Hoteli_SaloonHotel_SalonId_Target" />
+          <NavigationProperty Name="Salon" Relationship="Self.Hoteli_SaloonHotel_Salon" FromRole="Hoteli_SaloonHotel_Salon_Source" ToRole="Hoteli_SaloonHotel_Salon_Target" />
         </EntityType>
         <EntityType Name="Hoteli_SaloonPerson" customannotation:ClrType="Common.Queryable.Hoteli_SaloonPerson, ServerDom.Model, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <Key>
@@ -307,9 +314,9 @@
           <Property Name="ID" Type="Guid" Nullable="false" />
           <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="OwnerNameID" Type="Guid" />
-          <Property Name="SalonIdID" Type="Guid" />
+          <Property Name="SalonID" Type="Guid" />
           <NavigationProperty Name="OwnerName" Relationship="Self.Hoteli_SaloonPerson_OwnerName" FromRole="Hoteli_SaloonPerson_OwnerName_Source" ToRole="Hoteli_SaloonPerson_OwnerName_Target" />
-          <NavigationProperty Name="SalonId" Relationship="Self.Hoteli_SaloonPerson_SalonId" FromRole="Hoteli_SaloonPerson_SalonId_Source" ToRole="Hoteli_SaloonPerson_SalonId_Target" />
+          <NavigationProperty Name="Salon" Relationship="Self.Hoteli_SaloonPerson_Salon" FromRole="Hoteli_SaloonPerson_Salon_Source" ToRole="Hoteli_SaloonPerson_Salon_Target" />
         </EntityType>
         <Association Name="Common_LogRelatedItem_Log">
           <End Role="Common_LogRelatedItem_Log_Source" Type="Self.Common_LogRelatedItem" Multiplicity="*" />
@@ -455,18 +462,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Hoteli_Hotel_Location">
-          <End Role="Hoteli_Hotel_Location_Source" Type="Self.Hoteli_Hotel" Multiplicity="*" />
-          <End Role="Hoteli_Hotel_Location_Target" Type="Self.Hoteli_Location" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Hoteli_Hotel_Location_Target">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Hoteli_Hotel_Location_Source">
-              <PropertyRef Name="LocationID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="Hoteli_Product_HotelSaloon">
           <End Role="Hoteli_Product_HotelSaloon_Source" Type="Self.Hoteli_Product" Multiplicity="*" />
           <End Role="Hoteli_Product_HotelSaloon_Target" Type="Self.Hoteli_Hotel" Multiplicity="0..1" />
@@ -491,15 +486,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Hoteli_ProductHotel_ProductId">
-          <End Role="Hoteli_ProductHotel_ProductId_Source" Type="Self.Hoteli_ProductHotel" Multiplicity="*" />
-          <End Role="Hoteli_ProductHotel_ProductId_Target" Type="Self.Hoteli_Product" Multiplicity="0..1" />
+        <Association Name="Hoteli_ProductHotel_Product">
+          <End Role="Hoteli_ProductHotel_Product_Source" Type="Self.Hoteli_ProductHotel" Multiplicity="*" />
+          <End Role="Hoteli_ProductHotel_Product_Target" Type="Self.Hoteli_Product" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="Hoteli_ProductHotel_ProductId_Target">
+            <Principal Role="Hoteli_ProductHotel_Product_Target">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Hoteli_ProductHotel_ProductId_Source">
-              <PropertyRef Name="ProductIdID" />
+            <Dependent Role="Hoteli_ProductHotel_Product_Source">
+              <PropertyRef Name="ProductID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -515,15 +510,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Hoteli_ProductPerson_ProductId">
-          <End Role="Hoteli_ProductPerson_ProductId_Source" Type="Self.Hoteli_ProductPerson" Multiplicity="*" />
-          <End Role="Hoteli_ProductPerson_ProductId_Target" Type="Self.Hoteli_Product" Multiplicity="0..1" />
+        <Association Name="Hoteli_ProductPerson_Product">
+          <End Role="Hoteli_ProductPerson_Product_Source" Type="Self.Hoteli_ProductPerson" Multiplicity="*" />
+          <End Role="Hoteli_ProductPerson_Product_Target" Type="Self.Hoteli_Product" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="Hoteli_ProductPerson_ProductId_Target">
+            <Principal Role="Hoteli_ProductPerson_Product_Target">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Hoteli_ProductPerson_ProductId_Source">
-              <PropertyRef Name="ProductIdID" />
+            <Dependent Role="Hoteli_ProductPerson_Product_Source">
+              <PropertyRef Name="ProductID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -539,18 +534,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Hoteli_RoomReservation_ReservationGuest">
-          <End Role="Hoteli_RoomReservation_ReservationGuest_Source" Type="Self.Hoteli_RoomReservation" Multiplicity="*" />
-          <End Role="Hoteli_RoomReservation_ReservationGuest_Target" Type="Self.Hoteli_Reservation" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Hoteli_RoomReservation_ReservationGuest_Target">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Hoteli_RoomReservation_ReservationGuest_Source">
-              <PropertyRef Name="ReservationGuestID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="Hoteli_Rooms_RoomOfHotel">
           <End Role="Hoteli_Rooms_RoomOfHotel_Source" Type="Self.Hoteli_Rooms" Multiplicity="*" />
           <End Role="Hoteli_Rooms_RoomOfHotel_Target" Type="Self.Hoteli_Hotel" Multiplicity="0..1" />
@@ -563,15 +546,39 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Hoteli_RoomReservation_ReservatonRoom">
-          <End Role="Hoteli_RoomReservation_ReservatonRoom_Source" Type="Self.Hoteli_RoomReservation" Multiplicity="*" />
-          <End Role="Hoteli_RoomReservation_ReservatonRoom_Target" Type="Self.Hoteli_Rooms" Multiplicity="0..1" />
+        <Association Name="Hoteli_ReservationInfo_Base">
+          <End Role="Hoteli_ReservationInfo_Base_Source" Type="Self.Hoteli_ReservationInfo" Multiplicity="0..1" />
+          <End Role="Hoteli_ReservationInfo_Base_Target" Type="Self.Hoteli_Rooms" Multiplicity="1" />
           <ReferentialConstraint>
-            <Principal Role="Hoteli_RoomReservation_ReservatonRoom_Target">
+            <Principal Role="Hoteli_ReservationInfo_Base_Target">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Hoteli_RoomReservation_ReservatonRoom_Source">
-              <PropertyRef Name="ReservatonRoomID" />
+            <Dependent Role="Hoteli_ReservationInfo_Base_Source">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Hoteli_RoomReservation_ReservationHotel">
+          <End Role="Hoteli_RoomReservation_ReservationHotel_Source" Type="Self.Hoteli_RoomReservation" Multiplicity="*" />
+          <End Role="Hoteli_RoomReservation_ReservationHotel_Target" Type="Self.Hoteli_Reservation" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Hoteli_RoomReservation_ReservationHotel_Target">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Hoteli_RoomReservation_ReservationHotel_Source">
+              <PropertyRef Name="ReservationHotelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Hoteli_RoomReservation_ReservationRoom">
+          <End Role="Hoteli_RoomReservation_ReservationRoom_Source" Type="Self.Hoteli_RoomReservation" Multiplicity="*" />
+          <End Role="Hoteli_RoomReservation_ReservationRoom_Target" Type="Self.Hoteli_Rooms" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Hoteli_RoomReservation_ReservationRoom_Target">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Hoteli_RoomReservation_ReservationRoom_Source">
+              <PropertyRef Name="ReservationRoomID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -599,15 +606,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Hoteli_SaloonHotel_SalonId">
-          <End Role="Hoteli_SaloonHotel_SalonId_Source" Type="Self.Hoteli_SaloonHotel" Multiplicity="*" />
-          <End Role="Hoteli_SaloonHotel_SalonId_Target" Type="Self.Hoteli_Saloon" Multiplicity="0..1" />
+        <Association Name="Hoteli_SaloonHotel_Salon">
+          <End Role="Hoteli_SaloonHotel_Salon_Source" Type="Self.Hoteli_SaloonHotel" Multiplicity="*" />
+          <End Role="Hoteli_SaloonHotel_Salon_Target" Type="Self.Hoteli_Saloon" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="Hoteli_SaloonHotel_SalonId_Target">
+            <Principal Role="Hoteli_SaloonHotel_Salon_Target">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Hoteli_SaloonHotel_SalonId_Source">
-              <PropertyRef Name="SalonIdID" />
+            <Dependent Role="Hoteli_SaloonHotel_Salon_Source">
+              <PropertyRef Name="SalonID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -623,15 +630,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Hoteli_SaloonPerson_SalonId">
-          <End Role="Hoteli_SaloonPerson_SalonId_Source" Type="Self.Hoteli_SaloonPerson" Multiplicity="*" />
-          <End Role="Hoteli_SaloonPerson_SalonId_Target" Type="Self.Hoteli_Saloon" Multiplicity="0..1" />
+        <Association Name="Hoteli_SaloonPerson_Salon">
+          <End Role="Hoteli_SaloonPerson_Salon_Source" Type="Self.Hoteli_SaloonPerson" Multiplicity="*" />
+          <End Role="Hoteli_SaloonPerson_Salon_Target" Type="Self.Hoteli_Saloon" Multiplicity="0..1" />
           <ReferentialConstraint>
-            <Principal Role="Hoteli_SaloonPerson_SalonId_Target">
+            <Principal Role="Hoteli_SaloonPerson_Salon_Target">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Hoteli_SaloonPerson_SalonId_Source">
-              <PropertyRef Name="SalonIdID" />
+            <Dependent Role="Hoteli_SaloonPerson_Salon_Source">
+              <PropertyRef Name="SalonID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -659,8 +666,9 @@
           <EntitySet Name="Hoteli_ProductHotel" EntityType="Self.Hoteli_ProductHotel" />
           <EntitySet Name="Hoteli_ProductPerson" EntityType="Self.Hoteli_ProductPerson" />
           <EntitySet Name="Hoteli_Reservation" EntityType="Self.Hoteli_Reservation" />
-          <EntitySet Name="Hoteli_RoomReservation" EntityType="Self.Hoteli_RoomReservation" />
+          <EntitySet Name="Hoteli_ReservationInfo" EntityType="Self.Hoteli_ReservationInfo" />
           <EntitySet Name="Hoteli_Rooms" EntityType="Self.Hoteli_Rooms" />
+          <EntitySet Name="Hoteli_RoomReservation" EntityType="Self.Hoteli_RoomReservation" />
           <EntitySet Name="Hoteli_Saloon" EntityType="Self.Hoteli_Saloon" />
           <EntitySet Name="Hoteli_SaloonHotel" EntityType="Self.Hoteli_SaloonHotel" />
           <EntitySet Name="Hoteli_SaloonPerson" EntityType="Self.Hoteli_SaloonPerson" />
@@ -712,10 +720,6 @@
             <End Role="Hoteli_Location_Base_Source" EntitySet="Hoteli_Location" />
             <End Role="Hoteli_Location_Base_Target" EntitySet="Hoteli_Hotel" />
           </AssociationSet>
-          <AssociationSet Name="Hoteli_Hotel_Location" Association="Self.Hoteli_Hotel_Location">
-            <End Role="Hoteli_Hotel_Location_Source" EntitySet="Hoteli_Hotel" />
-            <End Role="Hoteli_Hotel_Location_Target" EntitySet="Hoteli_Location" />
-          </AssociationSet>
           <AssociationSet Name="Hoteli_Product_HotelSaloon" Association="Self.Hoteli_Product_HotelSaloon">
             <End Role="Hoteli_Product_HotelSaloon_Source" EntitySet="Hoteli_Product" />
             <End Role="Hoteli_Product_HotelSaloon_Target" EntitySet="Hoteli_Hotel" />
@@ -724,33 +728,37 @@
             <End Role="Hoteli_ProductHotel_OwnerName_Source" EntitySet="Hoteli_ProductHotel" />
             <End Role="Hoteli_ProductHotel_OwnerName_Target" EntitySet="Hoteli_Hotel" />
           </AssociationSet>
-          <AssociationSet Name="Hoteli_ProductHotel_ProductId" Association="Self.Hoteli_ProductHotel_ProductId">
-            <End Role="Hoteli_ProductHotel_ProductId_Source" EntitySet="Hoteli_ProductHotel" />
-            <End Role="Hoteli_ProductHotel_ProductId_Target" EntitySet="Hoteli_Product" />
+          <AssociationSet Name="Hoteli_ProductHotel_Product" Association="Self.Hoteli_ProductHotel_Product">
+            <End Role="Hoteli_ProductHotel_Product_Source" EntitySet="Hoteli_ProductHotel" />
+            <End Role="Hoteli_ProductHotel_Product_Target" EntitySet="Hoteli_Product" />
           </AssociationSet>
           <AssociationSet Name="Hoteli_ProductPerson_OwnerName" Association="Self.Hoteli_ProductPerson_OwnerName">
             <End Role="Hoteli_ProductPerson_OwnerName_Source" EntitySet="Hoteli_ProductPerson" />
             <End Role="Hoteli_ProductPerson_OwnerName_Target" EntitySet="Hoteli_Person" />
           </AssociationSet>
-          <AssociationSet Name="Hoteli_ProductPerson_ProductId" Association="Self.Hoteli_ProductPerson_ProductId">
-            <End Role="Hoteli_ProductPerson_ProductId_Source" EntitySet="Hoteli_ProductPerson" />
-            <End Role="Hoteli_ProductPerson_ProductId_Target" EntitySet="Hoteli_Product" />
+          <AssociationSet Name="Hoteli_ProductPerson_Product" Association="Self.Hoteli_ProductPerson_Product">
+            <End Role="Hoteli_ProductPerson_Product_Source" EntitySet="Hoteli_ProductPerson" />
+            <End Role="Hoteli_ProductPerson_Product_Target" EntitySet="Hoteli_Product" />
           </AssociationSet>
           <AssociationSet Name="Hoteli_Reservation_Guest" Association="Self.Hoteli_Reservation_Guest">
             <End Role="Hoteli_Reservation_Guest_Source" EntitySet="Hoteli_Reservation" />
             <End Role="Hoteli_Reservation_Guest_Target" EntitySet="Hoteli_Person" />
           </AssociationSet>
-          <AssociationSet Name="Hoteli_RoomReservation_ReservationGuest" Association="Self.Hoteli_RoomReservation_ReservationGuest">
-            <End Role="Hoteli_RoomReservation_ReservationGuest_Source" EntitySet="Hoteli_RoomReservation" />
-            <End Role="Hoteli_RoomReservation_ReservationGuest_Target" EntitySet="Hoteli_Reservation" />
-          </AssociationSet>
           <AssociationSet Name="Hoteli_Rooms_RoomOfHotel" Association="Self.Hoteli_Rooms_RoomOfHotel">
             <End Role="Hoteli_Rooms_RoomOfHotel_Source" EntitySet="Hoteli_Rooms" />
             <End Role="Hoteli_Rooms_RoomOfHotel_Target" EntitySet="Hoteli_Hotel" />
           </AssociationSet>
-          <AssociationSet Name="Hoteli_RoomReservation_ReservatonRoom" Association="Self.Hoteli_RoomReservation_ReservatonRoom">
-            <End Role="Hoteli_RoomReservation_ReservatonRoom_Source" EntitySet="Hoteli_RoomReservation" />
-            <End Role="Hoteli_RoomReservation_ReservatonRoom_Target" EntitySet="Hoteli_Rooms" />
+          <AssociationSet Name="Hoteli_ReservationInfo_Base" Association="Self.Hoteli_ReservationInfo_Base">
+            <End Role="Hoteli_ReservationInfo_Base_Source" EntitySet="Hoteli_ReservationInfo" />
+            <End Role="Hoteli_ReservationInfo_Base_Target" EntitySet="Hoteli_Rooms" />
+          </AssociationSet>
+          <AssociationSet Name="Hoteli_RoomReservation_ReservationHotel" Association="Self.Hoteli_RoomReservation_ReservationHotel">
+            <End Role="Hoteli_RoomReservation_ReservationHotel_Source" EntitySet="Hoteli_RoomReservation" />
+            <End Role="Hoteli_RoomReservation_ReservationHotel_Target" EntitySet="Hoteli_Reservation" />
+          </AssociationSet>
+          <AssociationSet Name="Hoteli_RoomReservation_ReservationRoom" Association="Self.Hoteli_RoomReservation_ReservationRoom">
+            <End Role="Hoteli_RoomReservation_ReservationRoom_Source" EntitySet="Hoteli_RoomReservation" />
+            <End Role="Hoteli_RoomReservation_ReservationRoom_Target" EntitySet="Hoteli_Rooms" />
           </AssociationSet>
           <AssociationSet Name="Hoteli_Saloon_HotelSaloon" Association="Self.Hoteli_Saloon_HotelSaloon">
             <End Role="Hoteli_Saloon_HotelSaloon_Source" EntitySet="Hoteli_Saloon" />
@@ -760,17 +768,17 @@
             <End Role="Hoteli_SaloonHotel_OwnerName_Source" EntitySet="Hoteli_SaloonHotel" />
             <End Role="Hoteli_SaloonHotel_OwnerName_Target" EntitySet="Hoteli_Hotel" />
           </AssociationSet>
-          <AssociationSet Name="Hoteli_SaloonHotel_SalonId" Association="Self.Hoteli_SaloonHotel_SalonId">
-            <End Role="Hoteli_SaloonHotel_SalonId_Source" EntitySet="Hoteli_SaloonHotel" />
-            <End Role="Hoteli_SaloonHotel_SalonId_Target" EntitySet="Hoteli_Saloon" />
+          <AssociationSet Name="Hoteli_SaloonHotel_Salon" Association="Self.Hoteli_SaloonHotel_Salon">
+            <End Role="Hoteli_SaloonHotel_Salon_Source" EntitySet="Hoteli_SaloonHotel" />
+            <End Role="Hoteli_SaloonHotel_Salon_Target" EntitySet="Hoteli_Saloon" />
           </AssociationSet>
           <AssociationSet Name="Hoteli_SaloonPerson_OwnerName" Association="Self.Hoteli_SaloonPerson_OwnerName">
             <End Role="Hoteli_SaloonPerson_OwnerName_Source" EntitySet="Hoteli_SaloonPerson" />
             <End Role="Hoteli_SaloonPerson_OwnerName_Target" EntitySet="Hoteli_Person" />
           </AssociationSet>
-          <AssociationSet Name="Hoteli_SaloonPerson_SalonId" Association="Self.Hoteli_SaloonPerson_SalonId">
-            <End Role="Hoteli_SaloonPerson_SalonId_Source" EntitySet="Hoteli_SaloonPerson" />
-            <End Role="Hoteli_SaloonPerson_SalonId_Target" EntitySet="Hoteli_Saloon" />
+          <AssociationSet Name="Hoteli_SaloonPerson_Salon" Association="Self.Hoteli_SaloonPerson_Salon">
+            <End Role="Hoteli_SaloonPerson_Salon_Source" EntitySet="Hoteli_SaloonPerson" />
+            <End Role="Hoteli_SaloonPerson_Salon_Target" EntitySet="Hoteli_Saloon" />
           </AssociationSet>
         </EntityContainer>
       </Schema>

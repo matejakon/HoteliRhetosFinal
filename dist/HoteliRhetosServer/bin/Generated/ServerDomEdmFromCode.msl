@@ -102,8 +102,8 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TableName" ColumnName="TableName" />
                 <ScalarProperty Name="Relation" ColumnName="Relation" />
-                <ScalarProperty Name="LogID" ColumnName="LogID" />
                 <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="LogID" ColumnName="LogID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -187,7 +187,6 @@
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -235,7 +234,7 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="OwnerNameID" ColumnName="OwnerNameID" />
-                <ScalarProperty Name="ProductIdID" ColumnName="ProductIdID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -245,7 +244,7 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="OwnerNameID" ColumnName="OwnerNameID" />
-                <ScalarProperty Name="ProductIdID" ColumnName="ProductIdID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -261,13 +260,11 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Hoteli_RoomReservation">
-            <EntityTypeMapping TypeName="Common.Hoteli_RoomReservation">
-              <MappingFragment StoreEntitySet="Hoteli_RoomReservation">
+          <EntitySetMapping Name="Hoteli_ReservationInfo">
+            <EntityTypeMapping TypeName="Common.Hoteli_ReservationInfo">
+              <MappingFragment StoreEntitySet="Hoteli_ReservationInfo">
                 <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Code" ColumnName="Code" />
-                <ScalarProperty Name="ReservationGuestID" ColumnName="ReservationGuestID" />
-                <ScalarProperty Name="ReservatonRoomID" ColumnName="ReservatonRoomID" />
+                <ScalarProperty Name="NumberOfRooms" ColumnName="NumberOfRooms" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -279,6 +276,16 @@
                 <ScalarProperty Name="NumberOfPeople" ColumnName="NumberOfPeople" />
                 <ScalarProperty Name="RoomOfHotelID" ColumnName="RoomOfHotelID" />
                 <ScalarProperty Name="TypeOfRoom" ColumnName="TypeOfRoom" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hoteli_RoomReservation">
+            <EntityTypeMapping TypeName="Common.Hoteli_RoomReservation">
+              <MappingFragment StoreEntitySet="Hoteli_RoomReservation">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ReservationHotelID" ColumnName="ReservationHotelID" />
+                <ScalarProperty Name="ReservationRoomID" ColumnName="ReservationRoomID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -298,7 +305,7 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="OwnerNameID" ColumnName="OwnerNameID" />
-                <ScalarProperty Name="SalonIdID" ColumnName="SalonIdID" />
+                <ScalarProperty Name="SalonID" ColumnName="SalonID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -308,7 +315,7 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="OwnerNameID" ColumnName="OwnerNameID" />
-                <ScalarProperty Name="SalonIdID" ColumnName="SalonIdID" />
+                <ScalarProperty Name="SalonID" ColumnName="SalonID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

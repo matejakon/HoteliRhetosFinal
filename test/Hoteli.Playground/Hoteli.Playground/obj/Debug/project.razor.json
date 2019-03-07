@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "c:\\Users\\Mateja\\Documents\\Hoteli\\test\\Hoteli.Playground\\Hoteli.Playground\\Hoteli.Playground.csproj",
+  "TargetFramework": "v4.5.1",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

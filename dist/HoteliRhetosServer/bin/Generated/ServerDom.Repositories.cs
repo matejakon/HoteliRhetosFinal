@@ -186,6 +186,11 @@ namespace Common
             builder.RegisterType<Hoteli._Helper.ProductPerson_Repository>().Keyed<IRepository>("Hoteli.ProductPerson").InstancePerLifetimeScope();
             builder.RegisterType<Hoteli._Helper.ProductHotel_Repository>().Keyed<IRepository>("Hoteli.ProductHotel").InstancePerLifetimeScope();
             builder.RegisterType<Hoteli._Helper.Product_Repository>().Keyed<IRepository>("Hoteli.Product").InstancePerLifetimeScope();
+            builder.RegisterType<Hoteli._Helper.Insert5Hotels_Repository>().Keyed<IRepository>("Hoteli.Insert5Hotels").InstancePerLifetimeScope();
+            builder.RegisterType<Hoteli._Helper.Insert5Hotels_Repository>().Keyed<IActionRepository>("Hoteli.Insert5Hotels").InstancePerLifetimeScope();
+            builder.RegisterType<Hoteli._Helper.Insert5Rooms_Repository>().Keyed<IRepository>("Hoteli.Insert5Rooms").InstancePerLifetimeScope();
+            builder.RegisterType<Hoteli._Helper.Insert5Rooms_Repository>().Keyed<IActionRepository>("Hoteli.Insert5Rooms").InstancePerLifetimeScope();
+            builder.RegisterType<Hoteli._Helper.ReservationInfo_Repository>().Keyed<IRepository>("Hoteli.ReservationInfo").InstancePerLifetimeScope();
             builder.RegisterType<Common._Helper.AutoCodeCache_Repository>().Keyed<IRepository>("Common.AutoCodeCache").InstancePerLifetimeScope();
             builder.RegisterType<Common._Helper.FilterId_Repository>().Keyed<IRepository>("Common.FilterId").InstancePerLifetimeScope();
             builder.RegisterType<Common._Helper.KeepSynchronizedMetadata_Repository>().Keyed<IRepository>("Common.KeepSynchronizedMetadata").InstancePerLifetimeScope();
@@ -382,6 +387,15 @@ namespace Hoteli._Helper
         private Product_Repository _Product_Repository;
         public Product_Repository Product { get { return _Product_Repository ?? (_Product_Repository = (Product_Repository)Rhetos.Extensibility.NamedPluginsExtensions.GetPlugin(_repositories, @"Hoteli.Product")); } }
 
+        private Insert5Hotels_Repository _Insert5Hotels_Repository;
+        public Insert5Hotels_Repository Insert5Hotels { get { return _Insert5Hotels_Repository ?? (_Insert5Hotels_Repository = (Insert5Hotels_Repository)Rhetos.Extensibility.NamedPluginsExtensions.GetPlugin(_repositories, @"Hoteli.Insert5Hotels")); } }
+
+        private Insert5Rooms_Repository _Insert5Rooms_Repository;
+        public Insert5Rooms_Repository Insert5Rooms { get { return _Insert5Rooms_Repository ?? (_Insert5Rooms_Repository = (Insert5Rooms_Repository)Rhetos.Extensibility.NamedPluginsExtensions.GetPlugin(_repositories, @"Hoteli.Insert5Rooms")); } }
+
+        private ReservationInfo_Repository _ReservationInfo_Repository;
+        public ReservationInfo_Repository ReservationInfo { get { return _ReservationInfo_Repository ?? (_ReservationInfo_Repository = (ReservationInfo_Repository)Rhetos.Extensibility.NamedPluginsExtensions.GetPlugin(_repositories, @"Hoteli.ReservationInfo")); } }
+
         /*ModuleInfo RepositoryMembers Hoteli*/
     }
 
@@ -504,9 +518,7 @@ namespace Hoteli._Helper
             {
                 DomHelper.ThrowIfSavingNonexistentId(saveException, checkUserPermissions, saveOperation);
         		Rhetos.RhetosException interpretedException = _sqlUtility.InterpretSqlException(saveException);
-        		if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Location", @"ID", @"FK_Hotel_Location_LocationID"))
-                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.Hotel,Property:LocationID,Referenced:Hoteli.Location";
-                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"Hoteli.Location", @"ID", @"FK_Location_Hotel_ID"))
+        		if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"Hoteli.Location", @"ID", @"FK_Location_Hotel_ID"))
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.Location,Property:ID,Referenced:Hoteli.Hotel";
                 if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"Hoteli.Rooms", @"RoomOfHotelID", @"FK_Rooms_Hotel_RoomOfHotelID"))
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.Rooms,Property:RoomOfHotelID,Referenced:Hoteli.Hotel";
@@ -741,9 +753,7 @@ namespace Hoteli._Helper
             {
                 DomHelper.ThrowIfSavingNonexistentId(saveException, checkUserPermissions, saveOperation);
         		Rhetos.RhetosException interpretedException = _sqlUtility.InterpretSqlException(saveException);
-        		if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"Hoteli.Hotel", @"LocationID", @"FK_Hotel_Location_LocationID"))
-                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.Hotel,Property:LocationID,Referenced:Hoteli.Location";
-                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsUniqueError(interpretedException, @"Hoteli.Location", @"IX_Location_Code"))
+        		if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsUniqueError(interpretedException, @"Hoteli.Location", @"IX_Location_Code"))
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.Location,Property:Code";
                 /*DataStructureInfo WritableOrm OnDatabaseError Hoteli.Location*/
                 if (checkUserPermissions)
@@ -930,10 +940,10 @@ namespace Hoteli._Helper
             {
                 DomHelper.ThrowIfSavingNonexistentId(saveException, checkUserPermissions, saveOperation);
         		Rhetos.RhetosException interpretedException = _sqlUtility.InterpretSqlException(saveException);
-        		if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Reservation", @"ID", @"FK_RoomReservation_Reservation_ReservationGuestID"))
-                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.RoomReservation,Property:ReservationGuestID,Referenced:Hoteli.Reservation";
-                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Rooms", @"ID", @"FK_RoomReservation_Rooms_ReservatonRoomID"))
-                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.RoomReservation,Property:ReservatonRoomID,Referenced:Hoteli.Rooms";
+        		if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Reservation", @"ID", @"FK_RoomReservation_Reservation_ReservationHotelID"))
+                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.RoomReservation,Property:ReservationHotelID,Referenced:Hoteli.Reservation";
+                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Rooms", @"ID", @"FK_RoomReservation_Rooms_ReservationRoomID"))
+                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.RoomReservation,Property:ReservationRoomID,Referenced:Hoteli.Rooms";
                 if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsUniqueError(interpretedException, @"Hoteli.RoomReservation", @"IX_RoomReservation_Code"))
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.RoomReservation,Property:Code";
                 /*DataStructureInfo WritableOrm OnDatabaseError Hoteli.RoomReservation*/
@@ -1080,6 +1090,18 @@ namespace Hoteli._Helper
                 insertedNew.Select(item => AutoCodeItem.Create(item, item.Code/*AutoCodePropertyInfo Grouping Hoteli.Reservation.Code*/)).ToList(),
                 (item, newCode) => item.Code = newCode/*AutoCodePropertyInfo GroupColumnMetadata Hoteli.Reservation.Code*/);
 
+            if (updatedNew.Count() > 0 || deletedIds.Count() > 0)
+            {
+                Hoteli.Reservation[] changedItems = updated.Zip(updatedNew, (i, j) => (i.DateTo == null && j.DateTo != null || i.DateTo != null && !i.DateTo.Equals(j.DateTo))
+                    ? i : null).Where(x => x != null).ToArray();
+
+                if (changedItems != null && changedItems.Length > 0)
+                {
+                    var lockedItems = _domRepository.Hoteli.Reservation.Filter(this.Query(changedItems.Select(item => item.ID)), new Negative());
+                    if (lockedItems.Count() > 0)
+                        throw new Rhetos.UserException(@"Dates are negative impossible to insert", "DataStructure:Hoteli.Reservation,ID:" + lockedItems.First().ID.ToString() + ",Property:DateTo");
+                }
+            }
             /*DataStructureInfo WritableOrm OldDataLoaded Hoteli.Reservation*/
 
             /*DataStructureInfo WritableOrm ProcessedOldData Hoteli.Reservation*/
@@ -1121,8 +1143,8 @@ namespace Hoteli._Helper
             {
                 DomHelper.ThrowIfSavingNonexistentId(saveException, checkUserPermissions, saveOperation);
         		Rhetos.RhetosException interpretedException = _sqlUtility.InterpretSqlException(saveException);
-        		if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"Hoteli.RoomReservation", @"ReservationGuestID", @"FK_RoomReservation_Reservation_ReservationGuestID"))
-                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.RoomReservation,Property:ReservationGuestID,Referenced:Hoteli.Reservation";
+        		if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"Hoteli.RoomReservation", @"ReservationHotelID", @"FK_RoomReservation_Reservation_ReservationHotelID"))
+                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.RoomReservation,Property:ReservationHotelID,Referenced:Hoteli.Reservation";
                 if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Person", @"ID", @"FK_Reservation_Person_GuestID"))
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.Reservation,Property:GuestID,Referenced:Hoteli.Person";
                 if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsUniqueError(interpretedException, @"Hoteli.Reservation", @"IX_Reservation_Code"))
@@ -1193,6 +1215,15 @@ namespace Hoteli._Helper
             // /*InvalidDataInfo OverrideUserMessages Hoteli.Reservation.SystemRequiredCode*/ return invalidData_Ids.Select(id => new InvalidDataMessage { ID = id, Message = invalidData_Description, Metadata = metadata });
         }
 
+        public IQueryable<Common.Queryable.Hoteli_Reservation> Filter(IQueryable<Common.Queryable.Hoteli_Reservation> localSource, Hoteli.Negative localParameter)
+        {
+            Func<IQueryable<Common.Queryable.Hoteli_Reservation>, Common.DomRepository, Hoteli.Negative/*ComposableFilterByInfo AdditionalParametersType Hoteli.Reservation.'Hoteli.Negative'*/, IQueryable<Common.Queryable.Hoteli_Reservation>> filterFunction =
+            (source, repository, parameter) => source.Where(item =>item.DateTo < DateTime.Now);
+
+            /*ComposableFilterByInfo BeforeFilter Hoteli.Reservation.'Hoteli.Negative'*/
+            return filterFunction(localSource, _domRepository, localParameter/*ComposableFilterByInfo AdditionalParametersArgument Hoteli.Reservation.'Hoteli.Negative'*/);
+        }
+
         public IQueryable<Common.Queryable.Hoteli_Reservation> Filter(IQueryable<Common.Queryable.Hoteli_Reservation> localSource, Hoteli.SystemRequiredCode localParameter)
         {
             Func<IQueryable<Common.Queryable.Hoteli_Reservation>, Common.DomRepository, Hoteli.SystemRequiredCode/*ComposableFilterByInfo AdditionalParametersType Hoteli.Reservation.'Hoteli.SystemRequiredCode'*/, IQueryable<Common.Queryable.Hoteli_Reservation>> filterFunction =
@@ -1200,6 +1231,14 @@ namespace Hoteli._Helper
 
             /*ComposableFilterByInfo BeforeFilter Hoteli.Reservation.'Hoteli.SystemRequiredCode'*/
             return filterFunction(localSource, _domRepository, localParameter/*ComposableFilterByInfo AdditionalParametersArgument Hoteli.Reservation.'Hoteli.SystemRequiredCode'*/);
+        }
+
+        public global::Hoteli.Reservation[] Filter(Hoteli.Negative filter_Parameter)
+        {
+            Func<Common.DomRepository, Hoteli.Negative/*FilterByInfo AdditionalParametersType Hoteli.Reservation.'Hoteli.Negative'*/, Hoteli.Reservation[]> filter_Function =
+                (repository, parameter) => repository.Hoteli.Reservation.Filter(repository.Hoteli.Reservation.Query(), parameter).ToArray();
+
+            return filter_Function(_domRepository, filter_Parameter/*FilterByInfo AdditionalParametersArgument Hoteli.Reservation.'Hoteli.Negative'*/);
         }
 
         public global::Hoteli.Reservation[] Filter(Hoteli.SystemRequiredCode filter_Parameter)
@@ -1321,8 +1360,8 @@ namespace Hoteli._Helper
             {
                 DomHelper.ThrowIfSavingNonexistentId(saveException, checkUserPermissions, saveOperation);
         		Rhetos.RhetosException interpretedException = _sqlUtility.InterpretSqlException(saveException);
-        		if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"Hoteli.RoomReservation", @"ReservatonRoomID", @"FK_RoomReservation_Rooms_ReservatonRoomID"))
-                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.RoomReservation,Property:ReservatonRoomID,Referenced:Hoteli.Rooms";
+        		if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"Hoteli.RoomReservation", @"ReservationRoomID", @"FK_RoomReservation_Rooms_ReservationRoomID"))
+                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.RoomReservation,Property:ReservationRoomID,Referenced:Hoteli.Rooms";
                 if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Hotel", @"ID", @"FK_Rooms_Hotel_RoomOfHotelID"))
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.Rooms,Property:RoomOfHotelID,Referenced:Hoteli.Hotel";
                 if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsUniqueError(interpretedException, @"Hoteli.Rooms", @"IX_Rooms_Code"))
@@ -1707,8 +1746,8 @@ namespace Hoteli._Helper
         		Rhetos.RhetosException interpretedException = _sqlUtility.InterpretSqlException(saveException);
         		if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Person", @"ID", @"FK_SaloonPerson_Person_OwnerNameID"))
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.SaloonPerson,Property:OwnerNameID,Referenced:Hoteli.Person";
-                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Saloon", @"ID", @"FK_SaloonPerson_Saloon_SalonIdID"))
-                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.SaloonPerson,Property:SalonIdID,Referenced:Hoteli.Saloon";
+                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Saloon", @"ID", @"FK_SaloonPerson_Saloon_SalonID"))
+                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.SaloonPerson,Property:SalonID,Referenced:Hoteli.Saloon";
                 if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsUniqueError(interpretedException, @"Hoteli.SaloonPerson", @"IX_SaloonPerson_Code"))
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.SaloonPerson,Property:Code";
                 /*DataStructureInfo WritableOrm OnDatabaseError Hoteli.SaloonPerson*/
@@ -1898,8 +1937,8 @@ namespace Hoteli._Helper
         		Rhetos.RhetosException interpretedException = _sqlUtility.InterpretSqlException(saveException);
         		if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Hotel", @"ID", @"FK_SaloonHotel_Hotel_OwnerNameID"))
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.SaloonHotel,Property:OwnerNameID,Referenced:Hoteli.Hotel";
-                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Saloon", @"ID", @"FK_SaloonHotel_Saloon_SalonIdID"))
-                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.SaloonHotel,Property:SalonIdID,Referenced:Hoteli.Saloon";
+                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Saloon", @"ID", @"FK_SaloonHotel_Saloon_SalonID"))
+                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.SaloonHotel,Property:SalonID,Referenced:Hoteli.Saloon";
                 if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsUniqueError(interpretedException, @"Hoteli.SaloonHotel", @"IX_SaloonHotel_Code"))
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.SaloonHotel,Property:Code";
                 /*DataStructureInfo WritableOrm OnDatabaseError Hoteli.SaloonHotel*/
@@ -2087,10 +2126,10 @@ namespace Hoteli._Helper
             {
                 DomHelper.ThrowIfSavingNonexistentId(saveException, checkUserPermissions, saveOperation);
         		Rhetos.RhetosException interpretedException = _sqlUtility.InterpretSqlException(saveException);
-        		if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"Hoteli.SaloonPerson", @"SalonIdID", @"FK_SaloonPerson_Saloon_SalonIdID"))
-                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.SaloonPerson,Property:SalonIdID,Referenced:Hoteli.Saloon";
-                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"Hoteli.SaloonHotel", @"SalonIdID", @"FK_SaloonHotel_Saloon_SalonIdID"))
-                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.SaloonHotel,Property:SalonIdID,Referenced:Hoteli.Saloon";
+        		if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"Hoteli.SaloonPerson", @"SalonID", @"FK_SaloonPerson_Saloon_SalonID"))
+                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.SaloonPerson,Property:SalonID,Referenced:Hoteli.Saloon";
+                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"Hoteli.SaloonHotel", @"SalonID", @"FK_SaloonHotel_Saloon_SalonID"))
+                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.SaloonHotel,Property:SalonID,Referenced:Hoteli.Saloon";
                 if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Hotel", @"ID", @"FK_Saloon_Hotel_HotelSaloonID"))
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.Saloon,Property:HotelSaloonID,Referenced:Hoteli.Hotel";
                 if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsUniqueError(interpretedException, @"Hoteli.Saloon", @"IX_Saloon_Code"))
@@ -2282,8 +2321,8 @@ namespace Hoteli._Helper
         		Rhetos.RhetosException interpretedException = _sqlUtility.InterpretSqlException(saveException);
         		if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Person", @"ID", @"FK_ProductPerson_Person_OwnerNameID"))
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.ProductPerson,Property:OwnerNameID,Referenced:Hoteli.Person";
-                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Product", @"ID", @"FK_ProductPerson_Product_ProductIdID"))
-                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.ProductPerson,Property:ProductIdID,Referenced:Hoteli.Product";
+                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Product", @"ID", @"FK_ProductPerson_Product_ProductID"))
+                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.ProductPerson,Property:ProductID,Referenced:Hoteli.Product";
                 if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsUniqueError(interpretedException, @"Hoteli.ProductPerson", @"IX_ProductPerson_Code"))
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.ProductPerson,Property:Code";
                 /*DataStructureInfo WritableOrm OnDatabaseError Hoteli.ProductPerson*/
@@ -2473,8 +2512,8 @@ namespace Hoteli._Helper
         		Rhetos.RhetosException interpretedException = _sqlUtility.InterpretSqlException(saveException);
         		if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Hotel", @"ID", @"FK_ProductHotel_Hotel_OwnerNameID"))
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.ProductHotel,Property:OwnerNameID,Referenced:Hoteli.Hotel";
-                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Product", @"ID", @"FK_ProductHotel_Product_ProductIdID"))
-                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.ProductHotel,Property:ProductIdID,Referenced:Hoteli.Product";
+                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Product", @"ID", @"FK_ProductHotel_Product_ProductID"))
+                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.ProductHotel,Property:ProductID,Referenced:Hoteli.Product";
                 if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsUniqueError(interpretedException, @"Hoteli.ProductHotel", @"IX_ProductHotel_Code"))
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.ProductHotel,Property:Code";
                 /*DataStructureInfo WritableOrm OnDatabaseError Hoteli.ProductHotel*/
@@ -2662,10 +2701,10 @@ namespace Hoteli._Helper
             {
                 DomHelper.ThrowIfSavingNonexistentId(saveException, checkUserPermissions, saveOperation);
         		Rhetos.RhetosException interpretedException = _sqlUtility.InterpretSqlException(saveException);
-        		if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"Hoteli.ProductPerson", @"ProductIdID", @"FK_ProductPerson_Product_ProductIdID"))
-                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.ProductPerson,Property:ProductIdID,Referenced:Hoteli.Product";
-                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"Hoteli.ProductHotel", @"ProductIdID", @"FK_ProductHotel_Product_ProductIdID"))
-                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.ProductHotel,Property:ProductIdID,Referenced:Hoteli.Product";
+        		if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"Hoteli.ProductPerson", @"ProductID", @"FK_ProductPerson_Product_ProductID"))
+                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.ProductPerson,Property:ProductID,Referenced:Hoteli.Product";
+                if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnDelete(interpretedException, @"Hoteli.ProductHotel", @"ProductID", @"FK_ProductHotel_Product_ProductID"))
+                    ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.ProductHotel,Property:ProductID,Referenced:Hoteli.Product";
                 if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsReferenceErrorOnInsertUpdate(interpretedException, @"Hoteli.Hotel", @"ID", @"FK_Product_Hotel_HotelSaloonID"))
                     ((Rhetos.UserException)interpretedException).SystemMessage = @"DataStructure:Hoteli.Product,Property:HotelSaloonID,Referenced:Hoteli.Hotel";
                 if (interpretedException is Rhetos.UserException && Rhetos.Utilities.MsSqlUtility.IsUniqueError(interpretedException, @"Hoteli.Product", @"IX_Product_Code"))
@@ -2754,6 +2793,128 @@ namespace Hoteli._Helper
         }
 
         /*DataStructureInfo RepositoryMembers Hoteli.Product*/
+    }
+
+    /*DataStructureInfo RepositoryAttributes Hoteli.Insert5Hotels*/
+    public class Insert5Hotels_Repository : /*DataStructureInfo OverrideBaseType Hoteli.Insert5Hotels*/ global::Common.RepositoryBase
+        , IActionRepository/*DataStructureInfo RepositoryInterface Hoteli.Insert5Hotels*/
+    {
+        /*DataStructureInfo RepositoryPrivateMembers Hoteli.Insert5Hotels*/
+
+        public Insert5Hotels_Repository(Common.DomRepository domRepository, Common.ExecutionContext executionContext/*DataStructureInfo RepositoryConstructorArguments Hoteli.Insert5Hotels*/)
+        {
+            _domRepository = domRepository;
+            _executionContext = executionContext;
+            /*DataStructureInfo RepositoryConstructorCode Hoteli.Insert5Hotels*/
+        }
+
+        public void Execute(Hoteli.Insert5Hotels actionParameter)
+        {
+            Action<Hoteli.Insert5Hotels, Common.DomRepository, IUserInfo/*DataStructureInfo AdditionalParametersType Hoteli.Insert5Hotels*/> action_Object = ( parametar ,repository, userInfo ) => 
+     {
+         for(int i=0;i<5;i++) {
+         var noviHotel = new Hoteli.Hotel { Code="+++", Name="A" };
+         repository.Hoteli.Hotel.Insert( noviHotel );
+         }
+     }
+    ;
+
+            bool allEffectsCompleted = false;
+            try
+            {
+                /*ActionInfo BeforeAction Hoteli.Insert5Hotels*/
+                action_Object(actionParameter, _domRepository, _executionContext.UserInfo/*DataStructureInfo AdditionalParametersArgument Hoteli.Insert5Hotels*/);
+                /*ActionInfo AfterAction Hoteli.Insert5Hotels*/
+                allEffectsCompleted = true;
+            }
+            finally
+            {
+                if (!allEffectsCompleted)
+                    _executionContext.PersistenceTransaction.DiscardChanges();
+            }
+        }
+
+        void IActionRepository.Execute(object actionParameter)
+        {
+            Execute((Hoteli.Insert5Hotels) actionParameter);
+        }
+
+        /*DataStructureInfo RepositoryMembers Hoteli.Insert5Hotels*/
+    }
+
+    /*DataStructureInfo RepositoryAttributes Hoteli.Insert5Rooms*/
+    public class Insert5Rooms_Repository : /*DataStructureInfo OverrideBaseType Hoteli.Insert5Rooms*/ global::Common.RepositoryBase
+        , IActionRepository/*DataStructureInfo RepositoryInterface Hoteli.Insert5Rooms*/
+    {
+        /*DataStructureInfo RepositoryPrivateMembers Hoteli.Insert5Rooms*/
+
+        public Insert5Rooms_Repository(Common.DomRepository domRepository, Common.ExecutionContext executionContext/*DataStructureInfo RepositoryConstructorArguments Hoteli.Insert5Rooms*/)
+        {
+            _domRepository = domRepository;
+            _executionContext = executionContext;
+            /*DataStructureInfo RepositoryConstructorCode Hoteli.Insert5Rooms*/
+        }
+
+        public void Execute(Hoteli.Insert5Rooms actionParameter)
+        {
+            Action<Hoteli.Insert5Rooms, Common.DomRepository, IUserInfo/*DataStructureInfo AdditionalParametersType Hoteli.Insert5Rooms*/> action_Object = ( parametar ,repository, userInfo ) => 
+     {
+         for(int i=0;i<5;i++) {
+         var noviHotel = new Hoteli.Rooms { Code="+++", NumberOfPeople = 1 };
+         repository.Hoteli.Rooms.Insert( noviHotel );
+         }
+     }
+    ;
+
+            bool allEffectsCompleted = false;
+            try
+            {
+                /*ActionInfo BeforeAction Hoteli.Insert5Rooms*/
+                action_Object(actionParameter, _domRepository, _executionContext.UserInfo/*DataStructureInfo AdditionalParametersArgument Hoteli.Insert5Rooms*/);
+                /*ActionInfo AfterAction Hoteli.Insert5Rooms*/
+                allEffectsCompleted = true;
+            }
+            finally
+            {
+                if (!allEffectsCompleted)
+                    _executionContext.PersistenceTransaction.DiscardChanges();
+            }
+        }
+
+        void IActionRepository.Execute(object actionParameter)
+        {
+            Execute((Hoteli.Insert5Rooms) actionParameter);
+        }
+
+        /*DataStructureInfo RepositoryMembers Hoteli.Insert5Rooms*/
+    }
+
+    /*DataStructureInfo RepositoryAttributes Hoteli.ReservationInfo*/
+    public class ReservationInfo_Repository : /*DataStructureInfo OverrideBaseType Hoteli.ReservationInfo*/ Common.OrmRepositoryBase<Common.Queryable.Hoteli_ReservationInfo, Hoteli.ReservationInfo> // Common.QueryableRepositoryBase<Common.Queryable.Hoteli_ReservationInfo, Hoteli.ReservationInfo> // Common.ReadableRepositoryBase<Hoteli.ReservationInfo> // global::Common.RepositoryBase
+        /*DataStructureInfo RepositoryInterface Hoteli.ReservationInfo*/
+    {
+        /*DataStructureInfo RepositoryPrivateMembers Hoteli.ReservationInfo*/
+
+        public ReservationInfo_Repository(Common.DomRepository domRepository, Common.ExecutionContext executionContext/*DataStructureInfo RepositoryConstructorArguments Hoteli.ReservationInfo*/)
+        {
+            _domRepository = domRepository;
+            _executionContext = executionContext;
+            /*DataStructureInfo RepositoryConstructorCode Hoteli.ReservationInfo*/
+        }
+
+        [Obsolete("Use Load() or Query() method.")]
+        public override global::Hoteli.ReservationInfo[] All()
+        {
+            return Query().ToSimple().ToArray();
+        }
+
+        public override IQueryable<Common.Queryable.Hoteli_ReservationInfo> Query()
+        {
+            /*DataStructureInfo RepositoryBeforeQuery Hoteli.ReservationInfo*/
+            return _executionContext.EntityFrameworkContext.Hoteli_ReservationInfo.AsNoTracking();
+        }
+
+        /*DataStructureInfo RepositoryMembers Hoteli.ReservationInfo*/
     }
 
     /*ModuleInfo HelperNamespaceMembers Hoteli*/

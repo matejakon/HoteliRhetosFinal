@@ -47,8 +47,7 @@ namespace Hoteli
                 ID = item.ID,
                 Code = item.Code,
                 Name = item.Name,
-                Address = item.Address,
-                LocationID = item.LocationID/*DataStructureInfo AssignSimpleProperty Hoteli.Hotel*/
+                Address = item.Address/*DataStructureInfo AssignSimpleProperty Hoteli.Hotel*/
             };
         }
 
@@ -58,8 +57,6 @@ namespace Hoteli
         public string Name { get; set; }
         [DataMember]/*PropertyInfo Attribute Hoteli.Hotel.Address*/
         public string Address { get; set; }
-        [DataMember]/*PropertyInfo Attribute Hoteli.Hotel.LocationID*/
-        public Guid? LocationID { get; set; }
         /*DataStructureInfo ClassBody Hoteli.Hotel*/
     }
 
@@ -105,17 +102,17 @@ namespace Hoteli
             {
                 ID = item.ID,
                 Code = item.Code,
-                ReservationGuestID = item.ReservationGuestID,
-                ReservatonRoomID = item.ReservatonRoomID/*DataStructureInfo AssignSimpleProperty Hoteli.RoomReservation*/
+                ReservationHotelID = item.ReservationHotelID,
+                ReservationRoomID = item.ReservationRoomID/*DataStructureInfo AssignSimpleProperty Hoteli.RoomReservation*/
             };
         }
 
         [DataMember]/*PropertyInfo Attribute Hoteli.RoomReservation.Code*/
         public string Code { get; set; }
-        [DataMember]/*PropertyInfo Attribute Hoteli.RoomReservation.ReservationGuestID*/
-        public Guid? ReservationGuestID { get; set; }
-        [DataMember]/*PropertyInfo Attribute Hoteli.RoomReservation.ReservatonRoomID*/
-        public Guid? ReservatonRoomID { get; set; }
+        [DataMember]/*PropertyInfo Attribute Hoteli.RoomReservation.ReservationHotelID*/
+        public Guid? ReservationHotelID { get; set; }
+        [DataMember]/*PropertyInfo Attribute Hoteli.RoomReservation.ReservationRoomID*/
+        public Guid? ReservationRoomID { get; set; }
         /*DataStructureInfo ClassBody Hoteli.RoomReservation*/
     }
 
@@ -233,7 +230,7 @@ namespace Hoteli
                 ID = item.ID,
                 Code = item.Code,
                 OwnerNameID = item.OwnerNameID,
-                SalonIdID = item.SalonIdID/*DataStructureInfo AssignSimpleProperty Hoteli.SaloonPerson*/
+                SalonID = item.SalonID/*DataStructureInfo AssignSimpleProperty Hoteli.SaloonPerson*/
             };
         }
 
@@ -241,8 +238,8 @@ namespace Hoteli
         public string Code { get; set; }
         [DataMember]/*PropertyInfo Attribute Hoteli.SaloonPerson.OwnerNameID*/
         public Guid? OwnerNameID { get; set; }
-        [DataMember]/*PropertyInfo Attribute Hoteli.SaloonPerson.SalonIdID*/
-        public Guid? SalonIdID { get; set; }
+        [DataMember]/*PropertyInfo Attribute Hoteli.SaloonPerson.SalonID*/
+        public Guid? SalonID { get; set; }
         /*DataStructureInfo ClassBody Hoteli.SaloonPerson*/
     }
 
@@ -258,7 +255,7 @@ namespace Hoteli
                 ID = item.ID,
                 Code = item.Code,
                 OwnerNameID = item.OwnerNameID,
-                SalonIdID = item.SalonIdID/*DataStructureInfo AssignSimpleProperty Hoteli.SaloonHotel*/
+                SalonID = item.SalonID/*DataStructureInfo AssignSimpleProperty Hoteli.SaloonHotel*/
             };
         }
 
@@ -266,8 +263,8 @@ namespace Hoteli
         public string Code { get; set; }
         [DataMember]/*PropertyInfo Attribute Hoteli.SaloonHotel.OwnerNameID*/
         public Guid? OwnerNameID { get; set; }
-        [DataMember]/*PropertyInfo Attribute Hoteli.SaloonHotel.SalonIdID*/
-        public Guid? SalonIdID { get; set; }
+        [DataMember]/*PropertyInfo Attribute Hoteli.SaloonHotel.SalonID*/
+        public Guid? SalonID { get; set; }
         /*DataStructureInfo ClassBody Hoteli.SaloonHotel*/
     }
 
@@ -308,7 +305,7 @@ namespace Hoteli
                 ID = item.ID,
                 Code = item.Code,
                 OwnerNameID = item.OwnerNameID,
-                ProductIdID = item.ProductIdID/*DataStructureInfo AssignSimpleProperty Hoteli.ProductPerson*/
+                ProductID = item.ProductID/*DataStructureInfo AssignSimpleProperty Hoteli.ProductPerson*/
             };
         }
 
@@ -316,8 +313,8 @@ namespace Hoteli
         public string Code { get; set; }
         [DataMember]/*PropertyInfo Attribute Hoteli.ProductPerson.OwnerNameID*/
         public Guid? OwnerNameID { get; set; }
-        [DataMember]/*PropertyInfo Attribute Hoteli.ProductPerson.ProductIdID*/
-        public Guid? ProductIdID { get; set; }
+        [DataMember]/*PropertyInfo Attribute Hoteli.ProductPerson.ProductID*/
+        public Guid? ProductID { get; set; }
         /*DataStructureInfo ClassBody Hoteli.ProductPerson*/
     }
 
@@ -333,7 +330,7 @@ namespace Hoteli
                 ID = item.ID,
                 Code = item.Code,
                 OwnerNameID = item.OwnerNameID,
-                ProductIdID = item.ProductIdID/*DataStructureInfo AssignSimpleProperty Hoteli.ProductHotel*/
+                ProductID = item.ProductID/*DataStructureInfo AssignSimpleProperty Hoteli.ProductHotel*/
             };
         }
 
@@ -341,8 +338,8 @@ namespace Hoteli
         public string Code { get; set; }
         [DataMember]/*PropertyInfo Attribute Hoteli.ProductHotel.OwnerNameID*/
         public Guid? OwnerNameID { get; set; }
-        [DataMember]/*PropertyInfo Attribute Hoteli.ProductHotel.ProductIdID*/
-        public Guid? ProductIdID { get; set; }
+        [DataMember]/*PropertyInfo Attribute Hoteli.ProductHotel.ProductID*/
+        public Guid? ProductID { get; set; }
         /*DataStructureInfo ClassBody Hoteli.ProductHotel*/
     }
 
@@ -369,6 +366,43 @@ namespace Hoteli
         [DataMember]/*PropertyInfo Attribute Hoteli.Product.HotelSaloonID*/
         public Guid? HotelSaloonID { get; set; }
         /*DataStructureInfo ClassBody Hoteli.Product*/
+    }
+
+    [DataContract]/*DataStructureInfo ClassAttributes Hoteli.Insert5Hotels*/
+    public class Insert5Hotels/*DataStructureInfo ClassInterace Hoteli.Insert5Hotels*/
+    {
+        /*DataStructureInfo ClassBody Hoteli.Insert5Hotels*/
+    }
+
+    [DataContract]/*DataStructureInfo ClassAttributes Hoteli.Insert5Rooms*/
+    public class Insert5Rooms/*DataStructureInfo ClassInterace Hoteli.Insert5Rooms*/
+    {
+        /*DataStructureInfo ClassBody Hoteli.Insert5Rooms*/
+    }
+
+    [DataContract]/*DataStructureInfo ClassAttributes Hoteli.ReservationInfo*/
+    public class ReservationInfo : EntityBase<Hoteli.ReservationInfo>/*Next DataStructureInfo ClassInterace Hoteli.ReservationInfo*/
+    {
+        /// <summary>Converts the simple object to a navigation object, and copies its simple properties. Navigation properties are set to null.</summary>
+        public Common.Queryable.Hoteli_ReservationInfo ToNavigation()
+        {
+            var item = this;
+            return new Common.Queryable.Hoteli_ReservationInfo
+            {
+                ID = item.ID,
+                NumberOfRooms = item.NumberOfRooms/*DataStructureInfo AssignSimpleProperty Hoteli.ReservationInfo*/
+            };
+        }
+
+        [DataMember]/*PropertyInfo Attribute Hoteli.ReservationInfo.NumberOfRooms*/
+        public int? NumberOfRooms { get; set; }
+        /*DataStructureInfo ClassBody Hoteli.ReservationInfo*/
+    }
+
+    [DataContract]/*DataStructureInfo ClassAttributes Hoteli.Negative*/
+    public class Negative/*DataStructureInfo ClassInterace Hoteli.Negative*/
+    {
+        /*DataStructureInfo ClassBody Hoteli.Negative*/
     }
 
     [DataContract]/*DataStructureInfo ClassAttributes Hoteli.SystemRequiredCode*/
@@ -580,8 +614,8 @@ namespace Common
                 ID = item.ID,
                 TableName = item.TableName,
                 Relation = item.Relation,
-                LogID = item.LogID,
-                ItemId = item.ItemId/*DataStructureInfo AssignSimpleProperty Common.LogRelatedItemReader*/
+                ItemId = item.ItemId,
+                LogID = item.LogID/*DataStructureInfo AssignSimpleProperty Common.LogRelatedItemReader*/
             };
         }
 
@@ -589,10 +623,10 @@ namespace Common
         public string TableName { get; set; }
         [DataMember]/*PropertyInfo Attribute Common.LogRelatedItemReader.Relation*/
         public string Relation { get; set; }
-        [DataMember]/*PropertyInfo Attribute Common.LogRelatedItemReader.LogID*/
-        public Guid? LogID { get; set; }
         [DataMember]/*PropertyInfo Attribute Common.LogRelatedItemReader.ItemId*/
         public Guid? ItemId { get; set; }
+        [DataMember]/*PropertyInfo Attribute Common.LogRelatedItemReader.LogID*/
+        public Guid? LogID { get; set; }
         /*DataStructureInfo ClassBody Common.LogRelatedItemReader*/
     }
 
@@ -984,28 +1018,8 @@ namespace Common.Queryable
                 ID = item.ID,
                 Code = item.Code,
                 Name = item.Name,
-                Address = item.Address,
-                LocationID = item.LocationID/*DataStructureInfo AssignSimpleProperty Hoteli.Hotel*/
+                Address = item.Address/*DataStructureInfo AssignSimpleProperty Hoteli.Hotel*/
             };
-        }
-
-        private Common.Queryable.Hoteli_Location _location;
-
-        /*DataStructureQueryable PropertyAttribute Hoteli.Hotel.Location*/
-        public virtual Common.Queryable.Hoteli_Location Location
-        {
-            get
-            {
-                /*DataStructureQueryable Getter Hoteli.Hotel.Location*/
-                return _location;
-            }
-            set
-            {
-                if (((IDetachOverride)this).Detaching) return;
-                /*DataStructureQueryable Setter Hoteli.Hotel.Location*/
-                _location = value;
-                LocationID = value != null ? (Guid?)value.ID : null;
-            }
         }
 
         private Common.Queryable.Hoteli_Location _extension_Location;
@@ -1094,46 +1108,46 @@ namespace Common.Queryable
             {
                 ID = item.ID,
                 Code = item.Code,
-                ReservationGuestID = item.ReservationGuestID,
-                ReservatonRoomID = item.ReservatonRoomID/*DataStructureInfo AssignSimpleProperty Hoteli.RoomReservation*/
+                ReservationHotelID = item.ReservationHotelID,
+                ReservationRoomID = item.ReservationRoomID/*DataStructureInfo AssignSimpleProperty Hoteli.RoomReservation*/
             };
         }
 
-        private Common.Queryable.Hoteli_Reservation _reservationGuest;
+        private Common.Queryable.Hoteli_Reservation _reservationHotel;
 
-        /*DataStructureQueryable PropertyAttribute Hoteli.RoomReservation.ReservationGuest*/
-        public virtual Common.Queryable.Hoteli_Reservation ReservationGuest
+        /*DataStructureQueryable PropertyAttribute Hoteli.RoomReservation.ReservationHotel*/
+        public virtual Common.Queryable.Hoteli_Reservation ReservationHotel
         {
             get
             {
-                /*DataStructureQueryable Getter Hoteli.RoomReservation.ReservationGuest*/
-                return _reservationGuest;
+                /*DataStructureQueryable Getter Hoteli.RoomReservation.ReservationHotel*/
+                return _reservationHotel;
             }
             set
             {
                 if (((IDetachOverride)this).Detaching) return;
-                /*DataStructureQueryable Setter Hoteli.RoomReservation.ReservationGuest*/
-                _reservationGuest = value;
-                ReservationGuestID = value != null ? (Guid?)value.ID : null;
+                /*DataStructureQueryable Setter Hoteli.RoomReservation.ReservationHotel*/
+                _reservationHotel = value;
+                ReservationHotelID = value != null ? (Guid?)value.ID : null;
             }
         }
 
-        private Common.Queryable.Hoteli_Rooms _reservatonRoom;
+        private Common.Queryable.Hoteli_Rooms _reservationRoom;
 
-        /*DataStructureQueryable PropertyAttribute Hoteli.RoomReservation.ReservatonRoom*/
-        public virtual Common.Queryable.Hoteli_Rooms ReservatonRoom
+        /*DataStructureQueryable PropertyAttribute Hoteli.RoomReservation.ReservationRoom*/
+        public virtual Common.Queryable.Hoteli_Rooms ReservationRoom
         {
             get
             {
-                /*DataStructureQueryable Getter Hoteli.RoomReservation.ReservatonRoom*/
-                return _reservatonRoom;
+                /*DataStructureQueryable Getter Hoteli.RoomReservation.ReservationRoom*/
+                return _reservationRoom;
             }
             set
             {
                 if (((IDetachOverride)this).Detaching) return;
-                /*DataStructureQueryable Setter Hoteli.RoomReservation.ReservatonRoom*/
-                _reservatonRoom = value;
-                ReservatonRoomID = value != null ? (Guid?)value.ID : null;
+                /*DataStructureQueryable Setter Hoteli.RoomReservation.ReservationRoom*/
+                _reservationRoom = value;
+                ReservationRoomID = value != null ? (Guid?)value.ID : null;
             }
         }
 
@@ -1230,6 +1244,24 @@ namespace Common.Queryable
             }
         }
 
+        private Common.Queryable.Hoteli_ReservationInfo _extension_ReservationInfo;
+
+        /*DataStructureQueryable PropertyAttribute Hoteli.Rooms.Extension_ReservationInfo*/
+        public virtual Common.Queryable.Hoteli_ReservationInfo Extension_ReservationInfo
+        {
+            get
+            {
+                /*DataStructureQueryable Getter Hoteli.Rooms.Extension_ReservationInfo*/
+                return _extension_ReservationInfo;
+            }
+            set
+            {
+                if (((IDetachOverride)this).Detaching) return;
+                /*DataStructureQueryable Setter Hoteli.Rooms.Extension_ReservationInfo*/
+                _extension_ReservationInfo = value;
+            }
+        }
+
         /*DataStructureInfo QueryableClassMembers Hoteli.Rooms*/
 
         public bool Equals(Hoteli_Rooms other)
@@ -1284,7 +1316,7 @@ namespace Common.Queryable
                 ID = item.ID,
                 Code = item.Code,
                 OwnerNameID = item.OwnerNameID,
-                SalonIdID = item.SalonIdID/*DataStructureInfo AssignSimpleProperty Hoteli.SaloonPerson*/
+                SalonID = item.SalonID/*DataStructureInfo AssignSimpleProperty Hoteli.SaloonPerson*/
             };
         }
 
@@ -1307,22 +1339,22 @@ namespace Common.Queryable
             }
         }
 
-        private Common.Queryable.Hoteli_Saloon _salonId;
+        private Common.Queryable.Hoteli_Saloon _salon;
 
-        /*DataStructureQueryable PropertyAttribute Hoteli.SaloonPerson.SalonId*/
-        public virtual Common.Queryable.Hoteli_Saloon SalonId
+        /*DataStructureQueryable PropertyAttribute Hoteli.SaloonPerson.Salon*/
+        public virtual Common.Queryable.Hoteli_Saloon Salon
         {
             get
             {
-                /*DataStructureQueryable Getter Hoteli.SaloonPerson.SalonId*/
-                return _salonId;
+                /*DataStructureQueryable Getter Hoteli.SaloonPerson.Salon*/
+                return _salon;
             }
             set
             {
                 if (((IDetachOverride)this).Detaching) return;
-                /*DataStructureQueryable Setter Hoteli.SaloonPerson.SalonId*/
-                _salonId = value;
-                SalonIdID = value != null ? (Guid?)value.ID : null;
+                /*DataStructureQueryable Setter Hoteli.SaloonPerson.Salon*/
+                _salon = value;
+                SalonID = value != null ? (Guid?)value.ID : null;
             }
         }
 
@@ -1348,7 +1380,7 @@ namespace Common.Queryable
                 ID = item.ID,
                 Code = item.Code,
                 OwnerNameID = item.OwnerNameID,
-                SalonIdID = item.SalonIdID/*DataStructureInfo AssignSimpleProperty Hoteli.SaloonHotel*/
+                SalonID = item.SalonID/*DataStructureInfo AssignSimpleProperty Hoteli.SaloonHotel*/
             };
         }
 
@@ -1371,22 +1403,22 @@ namespace Common.Queryable
             }
         }
 
-        private Common.Queryable.Hoteli_Saloon _salonId;
+        private Common.Queryable.Hoteli_Saloon _salon;
 
-        /*DataStructureQueryable PropertyAttribute Hoteli.SaloonHotel.SalonId*/
-        public virtual Common.Queryable.Hoteli_Saloon SalonId
+        /*DataStructureQueryable PropertyAttribute Hoteli.SaloonHotel.Salon*/
+        public virtual Common.Queryable.Hoteli_Saloon Salon
         {
             get
             {
-                /*DataStructureQueryable Getter Hoteli.SaloonHotel.SalonId*/
-                return _salonId;
+                /*DataStructureQueryable Getter Hoteli.SaloonHotel.Salon*/
+                return _salon;
             }
             set
             {
                 if (((IDetachOverride)this).Detaching) return;
-                /*DataStructureQueryable Setter Hoteli.SaloonHotel.SalonId*/
-                _salonId = value;
-                SalonIdID = value != null ? (Guid?)value.ID : null;
+                /*DataStructureQueryable Setter Hoteli.SaloonHotel.Salon*/
+                _salon = value;
+                SalonID = value != null ? (Guid?)value.ID : null;
             }
         }
 
@@ -1457,7 +1489,7 @@ namespace Common.Queryable
                 ID = item.ID,
                 Code = item.Code,
                 OwnerNameID = item.OwnerNameID,
-                ProductIdID = item.ProductIdID/*DataStructureInfo AssignSimpleProperty Hoteli.ProductPerson*/
+                ProductID = item.ProductID/*DataStructureInfo AssignSimpleProperty Hoteli.ProductPerson*/
             };
         }
 
@@ -1480,22 +1512,22 @@ namespace Common.Queryable
             }
         }
 
-        private Common.Queryable.Hoteli_Product _productId;
+        private Common.Queryable.Hoteli_Product _product;
 
-        /*DataStructureQueryable PropertyAttribute Hoteli.ProductPerson.ProductId*/
-        public virtual Common.Queryable.Hoteli_Product ProductId
+        /*DataStructureQueryable PropertyAttribute Hoteli.ProductPerson.Product*/
+        public virtual Common.Queryable.Hoteli_Product Product
         {
             get
             {
-                /*DataStructureQueryable Getter Hoteli.ProductPerson.ProductId*/
-                return _productId;
+                /*DataStructureQueryable Getter Hoteli.ProductPerson.Product*/
+                return _product;
             }
             set
             {
                 if (((IDetachOverride)this).Detaching) return;
-                /*DataStructureQueryable Setter Hoteli.ProductPerson.ProductId*/
-                _productId = value;
-                ProductIdID = value != null ? (Guid?)value.ID : null;
+                /*DataStructureQueryable Setter Hoteli.ProductPerson.Product*/
+                _product = value;
+                ProductID = value != null ? (Guid?)value.ID : null;
             }
         }
 
@@ -1521,7 +1553,7 @@ namespace Common.Queryable
                 ID = item.ID,
                 Code = item.Code,
                 OwnerNameID = item.OwnerNameID,
-                ProductIdID = item.ProductIdID/*DataStructureInfo AssignSimpleProperty Hoteli.ProductHotel*/
+                ProductID = item.ProductID/*DataStructureInfo AssignSimpleProperty Hoteli.ProductHotel*/
             };
         }
 
@@ -1544,22 +1576,22 @@ namespace Common.Queryable
             }
         }
 
-        private Common.Queryable.Hoteli_Product _productId;
+        private Common.Queryable.Hoteli_Product _product;
 
-        /*DataStructureQueryable PropertyAttribute Hoteli.ProductHotel.ProductId*/
-        public virtual Common.Queryable.Hoteli_Product ProductId
+        /*DataStructureQueryable PropertyAttribute Hoteli.ProductHotel.Product*/
+        public virtual Common.Queryable.Hoteli_Product Product
         {
             get
             {
-                /*DataStructureQueryable Getter Hoteli.ProductHotel.ProductId*/
-                return _productId;
+                /*DataStructureQueryable Getter Hoteli.ProductHotel.Product*/
+                return _product;
             }
             set
             {
                 if (((IDetachOverride)this).Detaching) return;
-                /*DataStructureQueryable Setter Hoteli.ProductHotel.ProductId*/
-                _productId = value;
-                ProductIdID = value != null ? (Guid?)value.ID : null;
+                /*DataStructureQueryable Setter Hoteli.ProductHotel.Product*/
+                _product = value;
+                ProductID = value != null ? (Guid?)value.ID : null;
             }
         }
 
@@ -1611,6 +1643,49 @@ namespace Common.Queryable
         /*DataStructureInfo QueryableClassMembers Hoteli.Product*/
 
         public bool Equals(Hoteli_Product other)
+        {
+            return other != null && other.ID == ID;
+        }
+    }
+
+    /*DataStructureInfo QueryableClassAttributes Hoteli.ReservationInfo*/
+    public class Hoteli_ReservationInfo : global::Hoteli.ReservationInfo, IQueryableEntity<Hoteli.ReservationInfo>, System.IEquatable<Hoteli_ReservationInfo>, IDetachOverride/*DataStructureInfo QueryableClassInterace Hoteli.ReservationInfo*/
+    {
+        bool IDetachOverride.Detaching { get; set; }
+
+        /// <summary>Converts the object with navigation properties to a simple object with primitive properties.</summary>
+        public Hoteli.ReservationInfo ToSimple()
+        {
+            var item = this;
+            return new Hoteli.ReservationInfo
+            {
+                ID = item.ID,
+                NumberOfRooms = item.NumberOfRooms/*DataStructureInfo AssignSimpleProperty Hoteli.ReservationInfo*/
+            };
+        }
+
+        private Common.Queryable.Hoteli_Rooms _base;
+
+        /*DataStructureQueryable PropertyAttribute Hoteli.ReservationInfo.Base*/
+        public virtual Common.Queryable.Hoteli_Rooms Base
+        {
+            get
+            {
+                /*DataStructureQueryable Getter Hoteli.ReservationInfo.Base*/
+                return _base;
+            }
+            set
+            {
+                if (((IDetachOverride)this).Detaching) return;
+                /*DataStructureQueryable Setter Hoteli.ReservationInfo.Base*/
+                _base = value;
+                ID = value != null ? value.ID : Guid.Empty;
+            }
+        }
+
+        /*DataStructureInfo QueryableClassMembers Hoteli.ReservationInfo*/
+
+        public bool Equals(Hoteli_ReservationInfo other)
         {
             return other != null && other.ID == ID;
         }
@@ -1770,8 +1845,8 @@ namespace Common.Queryable
                 ID = item.ID,
                 TableName = item.TableName,
                 Relation = item.Relation,
-                LogID = item.LogID,
-                ItemId = item.ItemId/*DataStructureInfo AssignSimpleProperty Common.LogRelatedItemReader*/
+                ItemId = item.ItemId,
+                LogID = item.LogID/*DataStructureInfo AssignSimpleProperty Common.LogRelatedItemReader*/
             };
         }
 
@@ -2346,8 +2421,7 @@ namespace Rhetos.Dom.DefaultConcepts
                 ID = item.ID,
                 Code = item.Code,
                 Name = item.Name,
-                Address = item.Address,
-                LocationID = item.LocationID/*DataStructureInfo AssignSimpleProperty Hoteli.Hotel*/
+                Address = item.Address/*DataStructureInfo AssignSimpleProperty Hoteli.Hotel*/
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
@@ -2370,8 +2444,8 @@ namespace Rhetos.Dom.DefaultConcepts
             {
                 ID = item.ID,
                 Code = item.Code,
-                ReservationGuestID = item.ReservationGuestID,
-                ReservatonRoomID = item.ReservatonRoomID/*DataStructureInfo AssignSimpleProperty Hoteli.RoomReservation*/
+                ReservationHotelID = item.ReservationHotelID,
+                ReservationRoomID = item.ReservationRoomID/*DataStructureInfo AssignSimpleProperty Hoteli.RoomReservation*/
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
@@ -2424,7 +2498,7 @@ namespace Rhetos.Dom.DefaultConcepts
                 ID = item.ID,
                 Code = item.Code,
                 OwnerNameID = item.OwnerNameID,
-                SalonIdID = item.SalonIdID/*DataStructureInfo AssignSimpleProperty Hoteli.SaloonPerson*/
+                SalonID = item.SalonID/*DataStructureInfo AssignSimpleProperty Hoteli.SaloonPerson*/
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
@@ -2435,7 +2509,7 @@ namespace Rhetos.Dom.DefaultConcepts
                 ID = item.ID,
                 Code = item.Code,
                 OwnerNameID = item.OwnerNameID,
-                SalonIdID = item.SalonIdID/*DataStructureInfo AssignSimpleProperty Hoteli.SaloonHotel*/
+                SalonID = item.SalonID/*DataStructureInfo AssignSimpleProperty Hoteli.SaloonHotel*/
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
@@ -2457,7 +2531,7 @@ namespace Rhetos.Dom.DefaultConcepts
                 ID = item.ID,
                 Code = item.Code,
                 OwnerNameID = item.OwnerNameID,
-                ProductIdID = item.ProductIdID/*DataStructureInfo AssignSimpleProperty Hoteli.ProductPerson*/
+                ProductID = item.ProductID/*DataStructureInfo AssignSimpleProperty Hoteli.ProductPerson*/
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
@@ -2468,7 +2542,7 @@ namespace Rhetos.Dom.DefaultConcepts
                 ID = item.ID,
                 Code = item.Code,
                 OwnerNameID = item.OwnerNameID,
-                ProductIdID = item.ProductIdID/*DataStructureInfo AssignSimpleProperty Hoteli.ProductHotel*/
+                ProductID = item.ProductID/*DataStructureInfo AssignSimpleProperty Hoteli.ProductHotel*/
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
@@ -2480,6 +2554,15 @@ namespace Rhetos.Dom.DefaultConcepts
                 Code = item.Code,
                 Title = item.Title,
                 HotelSaloonID = item.HotelSaloonID/*DataStructureInfo AssignSimpleProperty Hoteli.Product*/
+            });
+        }
+        /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
+        public static IQueryable<Hoteli.ReservationInfo> ToSimple(this IQueryable<Common.Queryable.Hoteli_ReservationInfo> query)
+        {
+            return query.Select(item => new Hoteli.ReservationInfo
+            {
+                ID = item.ID,
+                NumberOfRooms = item.NumberOfRooms/*DataStructureInfo AssignSimpleProperty Hoteli.ReservationInfo*/
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>
@@ -2555,8 +2638,8 @@ namespace Rhetos.Dom.DefaultConcepts
                 ID = item.ID,
                 TableName = item.TableName,
                 Relation = item.Relation,
-                LogID = item.LogID,
-                ItemId = item.ItemId/*DataStructureInfo AssignSimpleProperty Common.LogRelatedItemReader*/
+                ItemId = item.ItemId,
+                LogID = item.LogID/*DataStructureInfo AssignSimpleProperty Common.LogRelatedItemReader*/
             });
         }
         /// <summary>Converts the objects with navigation properties to simple objects with primitive properties.</summary>

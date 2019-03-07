@@ -14,11 +14,11 @@
 // }
 
 
-Module Bookstore;
-Entity Bookstore.Book;
-Autocode Bookstore.Book.Code;
-ShortString Bookstore.Book.Title;
-Integer Bookstore.Book.NumberOfPages;
+// Module Bookstore;
+// Entity Bookstore.Book;
+// Autocode Bookstore.Book.Code;
+// ShortString Bookstore.Book.Title;
+// Integer Bookstore.Book.NumberOfPages;
 
-ItemFilter Bookstore.Book.CommonMisspelling 'item => item.Bookstore.Book.Title.Contains("curiousity")';
-InvalidData Bookstore.Book.CommonMisspelling 'It is not allowed to enter misspelled word "curiousity".';
+// ItemFilter Bookstore.Book.CommonMisspelling 'item => item.Bookstore.Book.Title.Contains("curiousity")';
+//InvalidData Bookstore.Book.CommonMisspelling 'It is not allowed to enter misspelled word "curiousity".';

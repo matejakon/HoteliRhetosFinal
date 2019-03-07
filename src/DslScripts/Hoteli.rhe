@@ -4,7 +4,6 @@ Module Hoteli {
         ShortString Code { AutoCode; }
         ShortString Name;
         LongString Address;
-        Reference Location;
     }
 
     Entity Location 
@@ -20,8 +19,8 @@ Module Hoteli {
     Entity RoomReservation 
     { 
         ShortString Code { AutoCode; }
-        Reference ReservationGuest Hoteli.Reservation;
-        Reference ReservatonRoom Hoteli.Rooms;
+        Reference ReservationHotel Hoteli.Reservation;
+        Reference ReservationRoom Hoteli.Rooms;
     }
 
     Entity Reservation
@@ -31,6 +30,10 @@ Module Hoteli {
         Date DateFrom;
         Date DateTo;
         Integer NumberOfPeople;
+    
+
+        ItemFilter Negative 'item =>item.DateTo < DateTime.Now'; 
+        LockProperty DateTo.Negative 'Dates are negative impossible to insert';
     }
 
     Entity Rooms 
@@ -52,27 +55,28 @@ Module Hoteli {
         bool isEmployee;
         bool isOwner;
         Integer Discount;
+
+        Logging
+        {
+            Log Hoteli.Person.Name;
+            Log Hoteli.Person.Surname;
+            // Description is long and not interesting, so we don't want to log it's values.
+        }
     }
 
-    Entity Reservation 
-    {
-        ShortString Code { AutoCode; } 
-
-
-    }
 
     Entity SaloonPerson 
     {
          ShortString Code { AutoCode; }
          Reference OwnerName Hoteli.Person;
-         Reference SalonId Hoteli.Saloon;
+         Reference Salon Hoteli.Saloon;
     }
 
      Entity SaloonHotel 
     {
          ShortString Code { AutoCode; }
          Reference OwnerName Hoteli.Hotel;
-         Reference SalonId Hoteli.Saloon;
+         Reference Salon Hoteli.Saloon;
     }
 
     Entity Saloon 
@@ -86,14 +90,14 @@ Module Hoteli {
     {
          ShortString Code { AutoCode; }
          Reference OwnerName Hoteli.Person;
-         Reference ProductId Hoteli.Product;
+         Reference Product Hoteli.Product;
     }
 
      Entity ProductHotel
     {
          ShortString Code { AutoCode; }
          Reference OwnerName Hoteli.Hotel;
-         Reference ProductId Hoteli.Product;
+         Reference Product Hoteli.Product;
     }
 
     Entity Product 
@@ -103,8 +107,43 @@ Module Hoteli {
          Reference HotelSaloon Hoteli.Hotel;
     }
 
+    Action Insert5Hotels 
+    '( parametar ,repository, userInfo ) => 
+     {
+         for(int i=0;i<5;i++) {
+         var noviHotel = new Hoteli.Hotel { Code="+++", Name="A" };
+         repository.Hoteli.Hotel.Insert( noviHotel );
+         }
+     }
+    ';
 
+    Action Insert5Rooms
+    '( parametar ,repository, userInfo ) => 
+     {
+         for(int i=0;i<5;i++) {
+         var noviHotel = new Hoteli.Rooms { Code="+++", NumberOfPeople = 1 };
+         repository.Hoteli.Rooms.Insert( noviHotel );
+         }
+     }
+    ';
 
+      SqlQueryable ReservationInfo
+    "
+        SELECT
+            rm.ID,
+            NumberOfRooms = COUNT(r.ID)
+        FROM
+            Hoteli.RoomReservation r
+            JOIN Hoteli.Reservation rs on r.ReservationHotelID = rs.ID
+            JOIN Hoteli.Rooms rm on r.ReservationRoomID = rm.ID
+        GROUP BY
+            rm.ID
+    "
+{
+    Extends Hoteli.Rooms;
+    Integer NumberOfRooms;
 
+    AutodetectSqlDependencies;
+}
 
 }
